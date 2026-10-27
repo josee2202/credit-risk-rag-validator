@@ -361,15 +361,14 @@ if st.session_state.get("procesando", False):
                     f"{s.get('filename')}" + (f" p.{s['page']}" if s.get("page") else "") + f" · {score:.3f}"
                     for s, score in zip(res.get("sources", []), res.get("scores", []))
                 ]
+                # Fuentes y veredicto antes que los textos completos, para verlos sin desplazamiento horizontal
                 fila = {
                     "Consulta": res.get("chunk", ""),
-                    "Texto 1": relevantes[0],
-                    "Texto 2": relevantes[1],
-                    "Texto 3": relevantes[2],
                     "Fuentes (similitud)": " | ".join(fuentes),
                 }
                 if "respuesta" in res:
                     fila["Respuesta"] = res["respuesta"]
+                fila.update({"Texto 1": relevantes[0], "Texto 2": relevantes[1], "Texto 3": relevantes[2]})
                 formateados.append(fila)
 
             df_result = pd.DataFrame(formateados)
