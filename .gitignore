@@ -1,0 +1,32 @@
+# --- Entornos, cachés y sistema ---
+venv/
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.DS_Store
+.ipynb_checkpoints/
+
+# --- Credenciales ---
+.env
+.env.*
+!.env.example
+
+# --- Documentación confidencial de clientes y normativa de terceros (solo en local) ---
+/Bancos/
+/01. Test estadísticos/
+/Contexto_Normativo/
+/_backup_original_*/
+
+# --- Artefactos generados a partir de documentos confidenciales ---
+/resultado.xlsx
+IA-modulable/Resultados/
+IA-modulable/embeddings/
+IA-modulable/resultado.xlsx
+IA-modulable/resultados_bloques_definitivo.docx
+IA-modulable/ia_generativa.zip
+IA-modulable/PAQUETES\ /
+
+# --- Datos locales de servicios ---
+qdrant_storage/

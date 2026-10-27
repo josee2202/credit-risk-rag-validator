@@ -1,0 +1,8 @@
+ollama:
+  host: localhost
+  port: 11434
+llm: 
+  embed:
+    name: nomic-embed-text
+  text:
+    name: llama32-1b
