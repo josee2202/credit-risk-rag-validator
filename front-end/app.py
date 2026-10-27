@@ -125,7 +125,7 @@ with col1:
 
     ### 🎯 Pasos a seguir   
 
-     1️⃣ - **📁 Sube documentos de referencia**  → Crea o elige tu ** el nombre colección** (más rápido si ya existe)
+     1️⃣ - **📁 Sube documentos de referencia**  → Crea o elige tu **colección** (más rápido si ya existe)
 
      2️⃣ - **📄 Añade documento de consulta**  → Ajusta el **% a validar** si solo quieres una prueba
     
@@ -269,7 +269,7 @@ with st.sidebar:
 
     # Descripciones en formato más compacto
     descripciones = {
-        "Normativo vs Funcional": "📋 Realiza una comparación entre lagislación y el documento metodológico del banco",
+        "Normativo vs Funcional": "📋 Realiza una comparación entre legislación y el documento metodológico del banco",
         "Funcional vs Técnico": "⚙️ Compara el documento técnico (que explica el desarrollo) con el metodológico",
         "Código vs Técnico": "💻 Compara lo que se ha implementado con lo que explica el banco que ha hecho",
         "Código vs Estadístico": "📊 Verificar si cumple los test estadísticos relevantes"
@@ -392,9 +392,8 @@ if st.session_state.get("procesando", False):
 
 if st.session_state["resultado_validacion"] is not None and not st.session_state.get("procesando", False):
     st.markdown("---")
-    st.markdown('<div class="success-box">', unsafe_allow_html=True)
-    st.markdown("### ✅ Validación completada exitosamente")
-    st.markdown('</div>', unsafe_allow_html=True)
+    # Un único bloque HTML: Streamlit renderiza cada st.markdown por separado y el <div> quedaba vacío
+    st.markdown('<div class="success-box"><h3>✅ Validación completada exitosamente</h3></div>', unsafe_allow_html=True)
     
     # Métricas rápidas
     col1, col2, col3, col4 = st.columns(4)
