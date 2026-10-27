@@ -1,0 +1,86 @@
+[
+  {
+    "chunk": "Documento técnico de implementación del modelo de PD de hipotecas - Banco Ficticio S.A.\n\nDocumento ficticio redactado para demostrar el sistema. Describe la implementación en SAS.\n\n1. Fuentes de datos\n\nLas operaciones se extraen mensualmente de las tablas del almacén corporativo. Antes de cada ejecución se concilian los saldos con la contabilidad y se registran los controles de completitud.\n\n2. Construcción de la muestra\n\nLa muestra de desarrollo incluye las operaciones hipotecarias observadas entre enero de 2020 y diciembre de 2023.\n\n3. Marca de default",
+    "relevant_chunks": [
+      "Documento metodológico del modelo de PD de hipotecas - Banco Ficticio S.A.\n\nDocumento ficticio redactado para demostrar el sistema. Banco Ficticio S.A. no existe.\n\n1. Definición de default\n\nEl modelo considera en default a los préstamos hipotecarios con más de 90 días de impago en un importe significativo, así como a las operaciones en las que se identifica improbabilidad de pago, por ejemplo por concurso del deudor o refinanciación forzosa. La misma definición se utiliza en el desarrollo del modelo y en la gestión diaria del riesgo de la cartera.\n\n2. Muestra de desarrollo",
+      "2. Muestra de desarrollo\n\nLa tasa media de default a largo plazo se ha calculado con la muestra disponible entre enero de 2021 y diciembre de 2023, es decir, tres años de observación. Los años anteriores se han descartado porque procedían de un sistema informático antiguo, sin que se haya documentado un análisis del impacto de esta exclusión.\n\n3. Ciclo económico y conservadurismo\n\nEl periodo de observación corresponde a una fase expansiva del ciclo económico, con tasas de default históricamente bajas. La entidad no aplica ningún margen de conservadurismo sobre la PD calibrada, al considerar que el comportamiento reciente de la cartera es representativo del futuro.\n\n4. Calibración",
+      "6. Escenarios prospectivos\n\nPara el cálculo de la pérdida esperada bajo IFRS 9 se utiliza un único escenario macroeconómico, el escenario base publicado por el servicio de estudios, sin escenarios alternativos ni ponderaciones por probabilidad.\n\n7. Calidad de los datos\n\nLos datos del modelo proceden del almacén corporativo y se concilian mensualmente con la contabilidad. Cada variable es trazable hasta su sistema de origen y los controles de completitud y exactitud se documentan en un registro de calidad del dato.\n\n8. Ajustes manuales\n\nLos ajustes manuales de rating requieren una justificación escrita, quedan registrados en la herramienta de admisión y no pueden superar el 5% de las operaciones. La unidad de validación revisa su uso cada semestre.\n\n9. Organización del equipo"
+    ],
+    "context": "Documento: metodologia_banco_ficticio.docx\nDocumento metodológico del modelo de PD de hipotecas - Banco Ficticio S.A.\n\nDocumento ficticio redactado para demostrar el sistema. Banco Ficticio S.A. no existe.\n\n1. Definición de default\n\nEl modelo considera en default a los préstamos hipotecarios con más de 90 días de impago en un importe significativo, así como a las operaciones en las que se identifica improbabilidad de pago, por ejemplo por concurso del deudor o refinanciación forzosa. La misma definición se utiliza en el desarrollo del modelo y en la gestión diaria del riesgo de la cartera.\n\n2. Muestra de desarrollo\n\nDocumento: metodologia_banco_ficticio.docx\n2. Muestra de desarrollo\n\nLa tasa media de default a largo plazo se ha calculado con la muestra disponible entre enero de 2021 y diciembre de 2023, es decir, tres años de observación. Los años anteriores se han descartado porque procedían de un sistema informático antiguo, sin que se haya documentado un análisis del impacto de esta exclusión.\n\n3. Ciclo económico y conservadurismo\n\nEl periodo de observación corresponde a una fase expansiva del ciclo económico, con tasas de default históricamente bajas. La entidad no aplica ningún margen de conservadurismo sobre la PD calibrada, al considerar que el comportamiento reciente de la cartera es representativo del futuro.\n\n4. Calibración\n\nDocumento: metodologia_banco_ficticio.docx\n6. Escenarios prospectivos\n\nPara el cálculo de la pérdida esperada bajo IFRS 9 se utiliza un único escenario macroeconómico, el escenario base publicado por el servicio de estudios, sin escenarios alternativos ni ponderaciones por probabilidad.\n\n7. Calidad de los datos\n\nLos datos del modelo proceden del almacén corporativo y se concilian mensualmente con la contabilidad. Cada variable es trazable hasta su sistema de origen y los controles de completitud y exactitud se documentan en un registro de calidad del dato.\n\n8. Ajustes manuales\n\nLos ajustes manuales de rating requieren una justificación escrita, quedan registrados en la herramienta de admisión y no pueden superar el 5% de las operaciones. La unidad de validación revisa su uso cada semestre.\n\n9. Organización del equipo",
+    "sources": [
+      {
+        "filename": "metodologia_banco_ficticio.docx",
+        "page": null
+      },
+      {
+        "filename": "metodologia_banco_ficticio.docx",
+        "page": null
+      },
+      {
+        "filename": "metodologia_banco_ficticio.docx",
+        "page": null
+      }
+    ],
+    "scores": [
+      0.8631,
+      0.6676,
+      0.6668
+    ]
+  },
+  {
+    "chunk": "2. Construcción de la muestra\n\nLa muestra de desarrollo incluye las operaciones hipotecarias observadas entre enero de 2020 y diciembre de 2023.\n\n3. Marca de default\n\nLa variable de default se activa cuando la operación supera los 90 días de impago o cuando está marcada con improbabilidad de pago.\n\n4. Estimación del modelo\n\nLa PD se estima con una regresión logística (PROC LOGISTIC) con selección stepwise sobre el LTV, la antigüedad de la operación y el ratio de esfuerzo. Después se asignan cinco grados de rating por tramos de PD.\n\n5. Backtesting",
+    "relevant_chunks": [
+      "4. Calibración\n\nCada año se compara la PD asignada a cada grado de rating con la tasa de default observada mediante el test binomial con un nivel de confianza del 95%. Las desviaciones significativas se analizan en el comité de modelos y se documentan junto con las acciones correctoras acordadas.\n\n5. Poder discriminante\n\nEl poder discriminante se mide anualmente con el AUC, que en la última revisión fue de 0,81. Se ha fijado un umbral mínimo de 0,70; si el AUC queda por debajo, el caso se escala al comité de riesgos para decidir si se recalibra o se redesarrolla el modelo.\n\n6. Escenarios prospectivos",
+      "2. Muestra de desarrollo\n\nLa tasa media de default a largo plazo se ha calculado con la muestra disponible entre enero de 2021 y diciembre de 2023, es decir, tres años de observación. Los años anteriores se han descartado porque procedían de un sistema informático antiguo, sin que se haya documentado un análisis del impacto de esta exclusión.\n\n3. Ciclo económico y conservadurismo\n\nEl periodo de observación corresponde a una fase expansiva del ciclo económico, con tasas de default históricamente bajas. La entidad no aplica ningún margen de conservadurismo sobre la PD calibrada, al considerar que el comportamiento reciente de la cartera es representativo del futuro.\n\n4. Calibración",
+      "6. Escenarios prospectivos\n\nPara el cálculo de la pérdida esperada bajo IFRS 9 se utiliza un único escenario macroeconómico, el escenario base publicado por el servicio de estudios, sin escenarios alternativos ni ponderaciones por probabilidad.\n\n7. Calidad de los datos\n\nLos datos del modelo proceden del almacén corporativo y se concilian mensualmente con la contabilidad. Cada variable es trazable hasta su sistema de origen y los controles de completitud y exactitud se documentan en un registro de calidad del dato.\n\n8. Ajustes manuales\n\nLos ajustes manuales de rating requieren una justificación escrita, quedan registrados en la herramienta de admisión y no pueden superar el 5% de las operaciones. La unidad de validación revisa su uso cada semestre.\n\n9. Organización del equipo"
+    ],
+    "context": "Documento: metodologia_banco_ficticio.docx\n4. Calibración\n\nCada año se compara la PD asignada a cada grado de rating con la tasa de default observada mediante el test binomial con un nivel de confianza del 95%. Las desviaciones significativas se analizan en el comité de modelos y se documentan junto con las acciones correctoras acordadas.\n\n5. Poder discriminante\n\nEl poder discriminante se mide anualmente con el AUC, que en la última revisión fue de 0,81. Se ha fijado un umbral mínimo de 0,70; si el AUC queda por debajo, el caso se escala al comité de riesgos para decidir si se recalibra o se redesarrolla el modelo.\n\n6. Escenarios prospectivos\n\nDocumento: metodologia_banco_ficticio.docx\n2. Muestra de desarrollo\n\nLa tasa media de default a largo plazo se ha calculado con la muestra disponible entre enero de 2021 y diciembre de 2023, es decir, tres años de observación. Los años anteriores se han descartado porque procedían de un sistema informático antiguo, sin que se haya documentado un análisis del impacto de esta exclusión.\n\n3. Ciclo económico y conservadurismo\n\nEl periodo de observación corresponde a una fase expansiva del ciclo económico, con tasas de default históricamente bajas. La entidad no aplica ningún margen de conservadurismo sobre la PD calibrada, al considerar que el comportamiento reciente de la cartera es representativo del futuro.\n\n4. Calibración\n\nDocumento: metodologia_banco_ficticio.docx\n6. Escenarios prospectivos\n\nPara el cálculo de la pérdida esperada bajo IFRS 9 se utiliza un único escenario macroeconómico, el escenario base publicado por el servicio de estudios, sin escenarios alternativos ni ponderaciones por probabilidad.\n\n7. Calidad de los datos\n\nLos datos del modelo proceden del almacén corporativo y se concilian mensualmente con la contabilidad. Cada variable es trazable hasta su sistema de origen y los controles de completitud y exactitud se documentan en un registro de calidad del dato.\n\n8. Ajustes manuales\n\nLos ajustes manuales de rating requieren una justificación escrita, quedan registrados en la herramienta de admisión y no pueden superar el 5% de las operaciones. La unidad de validación revisa su uso cada semestre.\n\n9. Organización del equipo",
+    "sources": [
+      {
+        "filename": "metodologia_banco_ficticio.docx",
+        "page": null
+      },
+      {
+        "filename": "metodologia_banco_ficticio.docx",
+        "page": null
+      },
+      {
+        "filename": "metodologia_banco_ficticio.docx",
+        "page": null
+      }
+    ],
+    "scores": [
+      0.7947,
+      0.769,
+      0.7376
+    ]
+  },
+  {
+    "chunk": "5. Backtesting\n\nPara cada grado se calcula el límite superior del número de defaults con el test binomial al 95% y se marca el grado como rechazado si los defaults observados lo superan. El AUC se obtiene con la instrucción ROC de PROC LOGISTIC.\n\n6. Ajustes manuales\n\nLa herramienta de admisión permite ajustes manuales del rating hasta un máximo del 10% de las operaciones.\n\n7. Escenarios macroeconómicos\n\nLa PD prospectiva se calcula con tres escenarios (base, adverso y favorable) ponderados al 60%, 25% y 15%.",
+    "relevant_chunks": [
+      "4. Calibración\n\nCada año se compara la PD asignada a cada grado de rating con la tasa de default observada mediante el test binomial con un nivel de confianza del 95%. Las desviaciones significativas se analizan en el comité de modelos y se documentan junto con las acciones correctoras acordadas.\n\n5. Poder discriminante\n\nEl poder discriminante se mide anualmente con el AUC, que en la última revisión fue de 0,81. Se ha fijado un umbral mínimo de 0,70; si el AUC queda por debajo, el caso se escala al comité de riesgos para decidir si se recalibra o se redesarrolla el modelo.\n\n6. Escenarios prospectivos",
+      "6. Escenarios prospectivos\n\nPara el cálculo de la pérdida esperada bajo IFRS 9 se utiliza un único escenario macroeconómico, el escenario base publicado por el servicio de estudios, sin escenarios alternativos ni ponderaciones por probabilidad.\n\n7. Calidad de los datos\n\nLos datos del modelo proceden del almacén corporativo y se concilian mensualmente con la contabilidad. Cada variable es trazable hasta su sistema de origen y los controles de completitud y exactitud se documentan en un registro de calidad del dato.\n\n8. Ajustes manuales\n\nLos ajustes manuales de rating requieren una justificación escrita, quedan registrados en la herramienta de admisión y no pueden superar el 5% de las operaciones. La unidad de validación revisa su uso cada semestre.\n\n9. Organización del equipo",
+      "2. Muestra de desarrollo\n\nLa tasa media de default a largo plazo se ha calculado con la muestra disponible entre enero de 2021 y diciembre de 2023, es decir, tres años de observación. Los años anteriores se han descartado porque procedían de un sistema informático antiguo, sin que se haya documentado un análisis del impacto de esta exclusión.\n\n3. Ciclo económico y conservadurismo\n\nEl periodo de observación corresponde a una fase expansiva del ciclo económico, con tasas de default históricamente bajas. La entidad no aplica ningún margen de conservadurismo sobre la PD calibrada, al considerar que el comportamiento reciente de la cartera es representativo del futuro.\n\n4. Calibración"
+    ],
+    "context": "Documento: metodologia_banco_ficticio.docx\n4. Calibración\n\nCada año se compara la PD asignada a cada grado de rating con la tasa de default observada mediante el test binomial con un nivel de confianza del 95%. Las desviaciones significativas se analizan en el comité de modelos y se documentan junto con las acciones correctoras acordadas.\n\n5. Poder discriminante\n\nEl poder discriminante se mide anualmente con el AUC, que en la última revisión fue de 0,81. Se ha fijado un umbral mínimo de 0,70; si el AUC queda por debajo, el caso se escala al comité de riesgos para decidir si se recalibra o se redesarrolla el modelo.\n\n6. Escenarios prospectivos\n\nDocumento: metodologia_banco_ficticio.docx\n6. Escenarios prospectivos\n\nPara el cálculo de la pérdida esperada bajo IFRS 9 se utiliza un único escenario macroeconómico, el escenario base publicado por el servicio de estudios, sin escenarios alternativos ni ponderaciones por probabilidad.\n\n7. Calidad de los datos\n\nLos datos del modelo proceden del almacén corporativo y se concilian mensualmente con la contabilidad. Cada variable es trazable hasta su sistema de origen y los controles de completitud y exactitud se documentan en un registro de calidad del dato.\n\n8. Ajustes manuales\n\nLos ajustes manuales de rating requieren una justificación escrita, quedan registrados en la herramienta de admisión y no pueden superar el 5% de las operaciones. La unidad de validación revisa su uso cada semestre.\n\n9. Organización del equipo\n\nDocumento: metodologia_banco_ficticio.docx\n2. Muestra de desarrollo\n\nLa tasa media de default a largo plazo se ha calculado con la muestra disponible entre enero de 2021 y diciembre de 2023, es decir, tres años de observación. Los años anteriores se han descartado porque procedían de un sistema informático antiguo, sin que se haya documentado un análisis del impacto de esta exclusión.\n\n3. Ciclo económico y conservadurismo\n\nEl periodo de observación corresponde a una fase expansiva del ciclo económico, con tasas de default históricamente bajas. La entidad no aplica ningún margen de conservadurismo sobre la PD calibrada, al considerar que el comportamiento reciente de la cartera es representativo del futuro.\n\n4. Calibración",
+    "sources": [
+      {
+        "filename": "metodologia_banco_ficticio.docx",
+        "page": null
+      },
+      {
+        "filename": "metodologia_banco_ficticio.docx",
+        "page": null
+      },
+      {
+        "filename": "metodologia_banco_ficticio.docx",
+        "page": null
+      }
+    ],
+    "scores": [
+      0.8637,
+      0.8184,
+      0.7315
+    ]
+  }
+]

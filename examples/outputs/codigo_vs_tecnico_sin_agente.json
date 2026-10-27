@@ -1,0 +1,114 @@
+[
+  {
+    "chunk": "Respuestas generadas por el agente\n\nConsulta 1:\n\n**Bloque de código SAS**",
+    "relevant_chunks": [
+      "Documento técnico de implementación del modelo de PD de hipotecas - Banco Ficticio S.A.\n\nDocumento ficticio redactado para demostrar el sistema. Describe la implementación en SAS.\n\n1. Fuentes de datos\n\nLas operaciones se extraen mensualmente de las tablas del almacén corporativo. Antes de cada ejecución se concilian los saldos con la contabilidad y se registran los controles de completitud.\n\n2. Construcción de la muestra\n\nLa muestra de desarrollo incluye las operaciones hipotecarias observadas entre enero de 2020 y diciembre de 2023.\n\n3. Marca de default\n\nLa variable de default se activa cuando la operación supera los 90 días de impago o cuando está marcada con improbabilidad de pago.\n\n4. Estimación del modelo",
+      "6. Ajustes manuales\n\nLa herramienta de admisión permite ajustes manuales del rating hasta un máximo del 10% de las operaciones.\n\n7. Escenarios macroeconómicos\n\nLa PD prospectiva se calcula con tres escenarios (base, adverso y favorable) ponderados al 60%, 25% y 15%.",
+      "3. Marca de default\n\nLa variable de default se activa cuando la operación supera los 90 días de impago o cuando está marcada con improbabilidad de pago.\n\n4. Estimación del modelo\n\nLa PD se estima con una regresión logística (PROC LOGISTIC) con selección stepwise sobre el LTV, la antigüedad de la operación y el ratio de esfuerzo. Después se asignan cinco grados de rating por tramos de PD.\n\n5. Backtesting\n\nPara cada grado se calcula el límite superior del número de defaults con el test binomial al 95% y se marca el grado como rechazado si los defaults observados lo superan. El AUC se obtiene con la instrucción ROC de PROC LOGISTIC.\n\n6. Ajustes manuales\n\nLa herramienta de admisión permite ajustes manuales del rating hasta un máximo del 10% de las operaciones.\n\n7. Escenarios macroeconómicos"
+    ],
+    "context": "Documento: tecnico_banco_ficticio.docx\nDocumento técnico de implementación del modelo de PD de hipotecas - Banco Ficticio S.A.\n\nDocumento ficticio redactado para demostrar el sistema. Describe la implementación en SAS.\n\n1. Fuentes de datos\n\nLas operaciones se extraen mensualmente de las tablas del almacén corporativo. Antes de cada ejecución se concilian los saldos con la contabilidad y se registran los controles de completitud.\n\n2. Construcción de la muestra\n\nLa muestra de desarrollo incluye las operaciones hipotecarias observadas entre enero de 2020 y diciembre de 2023.\n\n3. Marca de default\n\nLa variable de default se activa cuando la operación supera los 90 días de impago o cuando está marcada con improbabilidad de pago.\n\n4. Estimación del modelo\n\nDocumento: tecnico_banco_ficticio.docx\n6. Ajustes manuales\n\nLa herramienta de admisión permite ajustes manuales del rating hasta un máximo del 10% de las operaciones.\n\n7. Escenarios macroeconómicos\n\nLa PD prospectiva se calcula con tres escenarios (base, adverso y favorable) ponderados al 60%, 25% y 15%.\n\nDocumento: tecnico_banco_ficticio.docx\n3. Marca de default\n\nLa variable de default se activa cuando la operación supera los 90 días de impago o cuando está marcada con improbabilidad de pago.\n\n4. Estimación del modelo\n\nLa PD se estima con una regresión logística (PROC LOGISTIC) con selección stepwise sobre el LTV, la antigüedad de la operación y el ratio de esfuerzo. Después se asignan cinco grados de rating por tramos de PD.\n\n5. Backtesting\n\nPara cada grado se calcula el límite superior del número de defaults con el test binomial al 95% y se marca el grado como rechazado si los defaults observados lo superan. El AUC se obtiene con la instrucción ROC de PROC LOGISTIC.\n\n6. Ajustes manuales\n\nLa herramienta de admisión permite ajustes manuales del rating hasta un máximo del 10% de las operaciones.\n\n7. Escenarios macroeconómicos",
+    "sources": [
+      {
+        "filename": "tecnico_banco_ficticio.docx",
+        "page": null
+      },
+      {
+        "filename": "tecnico_banco_ficticio.docx",
+        "page": null
+      },
+      {
+        "filename": "tecnico_banco_ficticio.docx",
+        "page": null
+      }
+    ],
+    "scores": [
+      0.634,
+      0.5872,
+      0.581
+    ]
+  },
+  {
+    "chunk": "* Selección de la muestra de desarrollo: se seleccionan los registros de la tabla `dwh.operaciones_hipotecarias` que tienen una fecha de observación entre `01JAN2020` y `31DEC2023`.\n* Marcado de default: se marca como default los registros con más de 90 días de impago o con probabilidad de pago improbable.\n* Estimación del modelo logístico: se estima el modelo logístico con la variable `default_flag` como predictor y se selecciona el tramo de PD según la media estimada.",
+    "relevant_chunks": [
+      "3. Marca de default\n\nLa variable de default se activa cuando la operación supera los 90 días de impago o cuando está marcada con improbabilidad de pago.\n\n4. Estimación del modelo\n\nLa PD se estima con una regresión logística (PROC LOGISTIC) con selección stepwise sobre el LTV, la antigüedad de la operación y el ratio de esfuerzo. Después se asignan cinco grados de rating por tramos de PD.\n\n5. Backtesting\n\nPara cada grado se calcula el límite superior del número de defaults con el test binomial al 95% y se marca el grado como rechazado si los defaults observados lo superan. El AUC se obtiene con la instrucción ROC de PROC LOGISTIC.\n\n6. Ajustes manuales\n\nLa herramienta de admisión permite ajustes manuales del rating hasta un máximo del 10% de las operaciones.\n\n7. Escenarios macroeconómicos",
+      "Documento técnico de implementación del modelo de PD de hipotecas - Banco Ficticio S.A.\n\nDocumento ficticio redactado para demostrar el sistema. Describe la implementación en SAS.\n\n1. Fuentes de datos\n\nLas operaciones se extraen mensualmente de las tablas del almacén corporativo. Antes de cada ejecución se concilian los saldos con la contabilidad y se registran los controles de completitud.\n\n2. Construcción de la muestra\n\nLa muestra de desarrollo incluye las operaciones hipotecarias observadas entre enero de 2020 y diciembre de 2023.\n\n3. Marca de default\n\nLa variable de default se activa cuando la operación supera los 90 días de impago o cuando está marcada con improbabilidad de pago.\n\n4. Estimación del modelo",
+      "6. Ajustes manuales\n\nLa herramienta de admisión permite ajustes manuales del rating hasta un máximo del 10% de las operaciones.\n\n7. Escenarios macroeconómicos\n\nLa PD prospectiva se calcula con tres escenarios (base, adverso y favorable) ponderados al 60%, 25% y 15%."
+    ],
+    "context": "Documento: tecnico_banco_ficticio.docx\n3. Marca de default\n\nLa variable de default se activa cuando la operación supera los 90 días de impago o cuando está marcada con improbabilidad de pago.\n\n4. Estimación del modelo\n\nLa PD se estima con una regresión logística (PROC LOGISTIC) con selección stepwise sobre el LTV, la antigüedad de la operación y el ratio de esfuerzo. Después se asignan cinco grados de rating por tramos de PD.\n\n5. Backtesting\n\nPara cada grado se calcula el límite superior del número de defaults con el test binomial al 95% y se marca el grado como rechazado si los defaults observados lo superan. El AUC se obtiene con la instrucción ROC de PROC LOGISTIC.\n\n6. Ajustes manuales\n\nLa herramienta de admisión permite ajustes manuales del rating hasta un máximo del 10% de las operaciones.\n\n7. Escenarios macroeconómicos\n\nDocumento: tecnico_banco_ficticio.docx\nDocumento técnico de implementación del modelo de PD de hipotecas - Banco Ficticio S.A.\n\nDocumento ficticio redactado para demostrar el sistema. Describe la implementación en SAS.\n\n1. Fuentes de datos\n\nLas operaciones se extraen mensualmente de las tablas del almacén corporativo. Antes de cada ejecución se concilian los saldos con la contabilidad y se registran los controles de completitud.\n\n2. Construcción de la muestra\n\nLa muestra de desarrollo incluye las operaciones hipotecarias observadas entre enero de 2020 y diciembre de 2023.\n\n3. Marca de default\n\nLa variable de default se activa cuando la operación supera los 90 días de impago o cuando está marcada con improbabilidad de pago.\n\n4. Estimación del modelo\n\nDocumento: tecnico_banco_ficticio.docx\n6. Ajustes manuales\n\nLa herramienta de admisión permite ajustes manuales del rating hasta un máximo del 10% de las operaciones.\n\n7. Escenarios macroeconómicos\n\nLa PD prospectiva se calcula con tres escenarios (base, adverso y favorable) ponderados al 60%, 25% y 15%.",
+    "sources": [
+      {
+        "filename": "tecnico_banco_ficticio.docx",
+        "page": null
+      },
+      {
+        "filename": "tecnico_banco_ficticio.docx",
+        "page": null
+      },
+      {
+        "filename": "tecnico_banco_ficticio.docx",
+        "page": null
+      }
+    ],
+    "scores": [
+      0.7835,
+      0.7602,
+      0.673
+    ]
+  },
+  {
+    "chunk": "* Estimación del modelo logístico: se estima el modelo logístico con la variable `default_flag` como predictor y se selecciona el tramo de PD según la media estimada.\n* Asignación de grados de rating por tramos de PD: se asignan grados de rating según la media estimada del modelo logístico.\n* Backtesting: se realiza un test binomial para evaluar la precisión del modelo logístico según la probabilidad de éxito (95%).\n* Poder discriminante: se calcula el área bajo la curva ROC (Receiver Operating Characteristic) para evaluar la precisión del modelo logístico.",
+    "relevant_chunks": [
+      "3. Marca de default\n\nLa variable de default se activa cuando la operación supera los 90 días de impago o cuando está marcada con improbabilidad de pago.\n\n4. Estimación del modelo\n\nLa PD se estima con una regresión logística (PROC LOGISTIC) con selección stepwise sobre el LTV, la antigüedad de la operación y el ratio de esfuerzo. Después se asignan cinco grados de rating por tramos de PD.\n\n5. Backtesting\n\nPara cada grado se calcula el límite superior del número de defaults con el test binomial al 95% y se marca el grado como rechazado si los defaults observados lo superan. El AUC se obtiene con la instrucción ROC de PROC LOGISTIC.\n\n6. Ajustes manuales\n\nLa herramienta de admisión permite ajustes manuales del rating hasta un máximo del 10% de las operaciones.\n\n7. Escenarios macroeconómicos",
+      "Documento técnico de implementación del modelo de PD de hipotecas - Banco Ficticio S.A.\n\nDocumento ficticio redactado para demostrar el sistema. Describe la implementación en SAS.\n\n1. Fuentes de datos\n\nLas operaciones se extraen mensualmente de las tablas del almacén corporativo. Antes de cada ejecución se concilian los saldos con la contabilidad y se registran los controles de completitud.\n\n2. Construcción de la muestra\n\nLa muestra de desarrollo incluye las operaciones hipotecarias observadas entre enero de 2020 y diciembre de 2023.\n\n3. Marca de default\n\nLa variable de default se activa cuando la operación supera los 90 días de impago o cuando está marcada con improbabilidad de pago.\n\n4. Estimación del modelo",
+      "6. Ajustes manuales\n\nLa herramienta de admisión permite ajustes manuales del rating hasta un máximo del 10% de las operaciones.\n\n7. Escenarios macroeconómicos\n\nLa PD prospectiva se calcula con tres escenarios (base, adverso y favorable) ponderados al 60%, 25% y 15%."
+    ],
+    "context": "Documento: tecnico_banco_ficticio.docx\n3. Marca de default\n\nLa variable de default se activa cuando la operación supera los 90 días de impago o cuando está marcada con improbabilidad de pago.\n\n4. Estimación del modelo\n\nLa PD se estima con una regresión logística (PROC LOGISTIC) con selección stepwise sobre el LTV, la antigüedad de la operación y el ratio de esfuerzo. Después se asignan cinco grados de rating por tramos de PD.\n\n5. Backtesting\n\nPara cada grado se calcula el límite superior del número de defaults con el test binomial al 95% y se marca el grado como rechazado si los defaults observados lo superan. El AUC se obtiene con la instrucción ROC de PROC LOGISTIC.\n\n6. Ajustes manuales\n\nLa herramienta de admisión permite ajustes manuales del rating hasta un máximo del 10% de las operaciones.\n\n7. Escenarios macroeconómicos\n\nDocumento: tecnico_banco_ficticio.docx\nDocumento técnico de implementación del modelo de PD de hipotecas - Banco Ficticio S.A.\n\nDocumento ficticio redactado para demostrar el sistema. Describe la implementación en SAS.\n\n1. Fuentes de datos\n\nLas operaciones se extraen mensualmente de las tablas del almacén corporativo. Antes de cada ejecución se concilian los saldos con la contabilidad y se registran los controles de completitud.\n\n2. Construcción de la muestra\n\nLa muestra de desarrollo incluye las operaciones hipotecarias observadas entre enero de 2020 y diciembre de 2023.\n\n3. Marca de default\n\nLa variable de default se activa cuando la operación supera los 90 días de impago o cuando está marcada con improbabilidad de pago.\n\n4. Estimación del modelo\n\nDocumento: tecnico_banco_ficticio.docx\n6. Ajustes manuales\n\nLa herramienta de admisión permite ajustes manuales del rating hasta un máximo del 10% de las operaciones.\n\n7. Escenarios macroeconómicos\n\nLa PD prospectiva se calcula con tres escenarios (base, adverso y favorable) ponderados al 60%, 25% y 15%.",
+    "sources": [
+      {
+        "filename": "tecnico_banco_ficticio.docx",
+        "page": null
+      },
+      {
+        "filename": "tecnico_banco_ficticio.docx",
+        "page": null
+      },
+      {
+        "filename": "tecnico_banco_ficticio.docx",
+        "page": null
+      }
+    ],
+    "scores": [
+      0.8502,
+      0.7163,
+      0.6949
+    ]
+  },
+  {
+    "chunk": "**Funcionalidad breves**\n\n* Selección de la muestra de desarrollo y marcado de default.\n* Estimación del modelo logístico con grados de rating por tramos de PD.\n* Backtesting del modelo logístico para evaluar su precisión.\n* Calculo del poder discriminante para evaluar la precisión del modelo logístico.\n\n======================================================================",
+    "relevant_chunks": [
+      "3. Marca de default\n\nLa variable de default se activa cuando la operación supera los 90 días de impago o cuando está marcada con improbabilidad de pago.\n\n4. Estimación del modelo\n\nLa PD se estima con una regresión logística (PROC LOGISTIC) con selección stepwise sobre el LTV, la antigüedad de la operación y el ratio de esfuerzo. Después se asignan cinco grados de rating por tramos de PD.\n\n5. Backtesting\n\nPara cada grado se calcula el límite superior del número de defaults con el test binomial al 95% y se marca el grado como rechazado si los defaults observados lo superan. El AUC se obtiene con la instrucción ROC de PROC LOGISTIC.\n\n6. Ajustes manuales\n\nLa herramienta de admisión permite ajustes manuales del rating hasta un máximo del 10% de las operaciones.\n\n7. Escenarios macroeconómicos",
+      "Documento técnico de implementación del modelo de PD de hipotecas - Banco Ficticio S.A.\n\nDocumento ficticio redactado para demostrar el sistema. Describe la implementación en SAS.\n\n1. Fuentes de datos\n\nLas operaciones se extraen mensualmente de las tablas del almacén corporativo. Antes de cada ejecución se concilian los saldos con la contabilidad y se registran los controles de completitud.\n\n2. Construcción de la muestra\n\nLa muestra de desarrollo incluye las operaciones hipotecarias observadas entre enero de 2020 y diciembre de 2023.\n\n3. Marca de default\n\nLa variable de default se activa cuando la operación supera los 90 días de impago o cuando está marcada con improbabilidad de pago.\n\n4. Estimación del modelo",
+      "6. Ajustes manuales\n\nLa herramienta de admisión permite ajustes manuales del rating hasta un máximo del 10% de las operaciones.\n\n7. Escenarios macroeconómicos\n\nLa PD prospectiva se calcula con tres escenarios (base, adverso y favorable) ponderados al 60%, 25% y 15%."
+    ],
+    "context": "Documento: tecnico_banco_ficticio.docx\n3. Marca de default\n\nLa variable de default se activa cuando la operación supera los 90 días de impago o cuando está marcada con improbabilidad de pago.\n\n4. Estimación del modelo\n\nLa PD se estima con una regresión logística (PROC LOGISTIC) con selección stepwise sobre el LTV, la antigüedad de la operación y el ratio de esfuerzo. Después se asignan cinco grados de rating por tramos de PD.\n\n5. Backtesting\n\nPara cada grado se calcula el límite superior del número de defaults con el test binomial al 95% y se marca el grado como rechazado si los defaults observados lo superan. El AUC se obtiene con la instrucción ROC de PROC LOGISTIC.\n\n6. Ajustes manuales\n\nLa herramienta de admisión permite ajustes manuales del rating hasta un máximo del 10% de las operaciones.\n\n7. Escenarios macroeconómicos\n\nDocumento: tecnico_banco_ficticio.docx\nDocumento técnico de implementación del modelo de PD de hipotecas - Banco Ficticio S.A.\n\nDocumento ficticio redactado para demostrar el sistema. Describe la implementación en SAS.\n\n1. Fuentes de datos\n\nLas operaciones se extraen mensualmente de las tablas del almacén corporativo. Antes de cada ejecución se concilian los saldos con la contabilidad y se registran los controles de completitud.\n\n2. Construcción de la muestra\n\nLa muestra de desarrollo incluye las operaciones hipotecarias observadas entre enero de 2020 y diciembre de 2023.\n\n3. Marca de default\n\nLa variable de default se activa cuando la operación supera los 90 días de impago o cuando está marcada con improbabilidad de pago.\n\n4. Estimación del modelo\n\nDocumento: tecnico_banco_ficticio.docx\n6. Ajustes manuales\n\nLa herramienta de admisión permite ajustes manuales del rating hasta un máximo del 10% de las operaciones.\n\n7. Escenarios macroeconómicos\n\nLa PD prospectiva se calcula con tres escenarios (base, adverso y favorable) ponderados al 60%, 25% y 15%.",
+    "sources": [
+      {
+        "filename": "tecnico_banco_ficticio.docx",
+        "page": null
+      },
+      {
+        "filename": "tecnico_banco_ficticio.docx",
+        "page": null
+      },
+      {
+        "filename": "tecnico_banco_ficticio.docx",
+        "page": null
+      }
+    ],
+    "scores": [
+      0.824,
+      0.7011,
+      0.693
+    ]
+  }
+]
