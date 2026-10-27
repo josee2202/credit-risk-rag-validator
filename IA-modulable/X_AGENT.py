@@ -10,6 +10,7 @@ port = cfg_param['ollama']['port']
 ollama_endpoint = f"http://{host}:{port}"
 
 llama32_1b_model_name = cfg_param['llm']['text']['name']  # Pequeño 
+llm_max_tokens = cfg_param['llm']['text'].get('max_tokens', 1024)  # evita generaciones sin fin (num_predict)
 
 # Agente 
 # class Agente:
@@ -44,7 +45,8 @@ llama32_1b_model_name = cfg_param['llm']['text']['name']  # Pequeño
 
 class Agente:
     def __init__(self, ollama_endpoint, model_name, temperature=0):
-        self.llm = OllamaLLM(base_url=ollama_endpoint, model=model_name, temperature=temperature)
+        self.llm = OllamaLLM(base_url=ollama_endpoint, model=model_name, temperature=temperature,
+                             num_predict=llm_max_tokens)
         self.prompt = None  # Inicializar sin prompt
         self.chain = None   # Inicializar sin chain
         
@@ -90,7 +92,8 @@ agente_dinamico = Agente(ollama_endpoint, llama32_1b_model_name)
 # Agente 
 class Agente_codigo:
     def __init__(self, ollama_endpoint, model_name, temperature = 0):
-        self.llm = OllamaLLM(base_url=ollama_endpoint, model=model_name, temperature = temperature)
+        self.llm = OllamaLLM(base_url=ollama_endpoint, model=model_name, temperature = temperature,
+                             num_predict=llm_max_tokens)
         self.prompt = prompt_codigo_texto
         self.chain = self.prompt | self.llm
         
@@ -119,7 +122,8 @@ codigo = Agente_codigo(ollama_endpoint, llama32_1b_model_name)
 # Agente 
 class Agente_summarizer:
     def __init__(self, ollama_endpoint, model_name, temperature = 0):
-        self.llm = OllamaLLM(base_url=ollama_endpoint, model=model_name, temperature = temperature)
+        self.llm = OllamaLLM(base_url=ollama_endpoint, model=model_name, temperature = temperature,
+                             num_predict=llm_max_tokens)
         self.prompt = promt_resumen
         self.chain = self.prompt | self.llm
         

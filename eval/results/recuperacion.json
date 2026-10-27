@@ -1,0 +1,456 @@
+{
+  "guia_sintetica": {
+    "coleccion": "eval_guia_sintetica",
+    "n_fragmentos": 6,
+    "seg_indexacion": 1.6,
+    "metricas": {
+      "n_consultas": 8,
+      "hit@1": 1.0,
+      "hit@3": 1.0,
+      "mrr@3": 1.0,
+      "top1_score_con_requisito": [
+        0.7866,
+        0.7308,
+        0.8228,
+        0.8076,
+        0.7403,
+        0.8347,
+        0.7709,
+        0.7125
+      ],
+      "top1_score_sin_requisito": [
+        0.6831,
+        0.6613
+      ]
+    },
+    "filas": [
+      {
+        "seccion": "M1",
+        "gold_req": "R1",
+        "recuperados": [
+          "R1",
+          "R5+R6+R7",
+          "R3+R4+R5"
+        ],
+        "fuentes": [
+          "normativa_sintetica_pd.pdf p.1",
+          "normativa_sintetica_pd.pdf p.1",
+          "normativa_sintetica_pd.pdf p.1"
+        ],
+        "scores": [
+          0.7866,
+          0.7315,
+          0.7214
+        ],
+        "rango": 1
+      },
+      {
+        "seccion": "M2",
+        "gold_req": "R2",
+        "recuperados": [
+          "R2+R3",
+          "R1",
+          "R5+R6+R7"
+        ],
+        "fuentes": [
+          "normativa_sintetica_pd.pdf p.1",
+          "normativa_sintetica_pd.pdf p.1",
+          "normativa_sintetica_pd.pdf p.1"
+        ],
+        "scores": [
+          0.7308,
+          0.6883,
+          0.6759
+        ],
+        "rango": 1
+      },
+      {
+        "seccion": "M3",
+        "gold_req": "R3",
+        "recuperados": [
+          "R2+R3",
+          "R3+R4+R5",
+          "R1"
+        ],
+        "fuentes": [
+          "normativa_sintetica_pd.pdf p.1",
+          "normativa_sintetica_pd.pdf p.1",
+          "normativa_sintetica_pd.pdf p.1"
+        ],
+        "scores": [
+          0.8228,
+          0.8001,
+          0.7011
+        ],
+        "rango": 1
+      },
+      {
+        "seccion": "M4",
+        "gold_req": "R4",
+        "recuperados": [
+          "R3+R4+R5",
+          "R1",
+          "R5+R6+R7"
+        ],
+        "fuentes": [
+          "normativa_sintetica_pd.pdf p.1",
+          "normativa_sintetica_pd.pdf p.1",
+          "normativa_sintetica_pd.pdf p.1"
+        ],
+        "scores": [
+          0.8076,
+          0.743,
+          0.7175
+        ],
+        "rango": 1
+      },
+      {
+        "seccion": "M5",
+        "gold_req": "R5",
+        "recuperados": [
+          "R5+R6+R7",
+          "R3+R4+R5",
+          "R10"
+        ],
+        "fuentes": [
+          "normativa_sintetica_pd.pdf p.1",
+          "normativa_sintetica_pd.pdf p.1",
+          "normativa_sintetica_pd.pdf p.2"
+        ],
+        "scores": [
+          0.7403,
+          0.702,
+          0.6668
+        ],
+        "rango": 1
+      },
+      {
+        "seccion": "M6",
+        "gold_req": "R8",
+        "recuperados": [
+          "R8+R9",
+          "R3+R4+R5",
+          "R5+R6+R7"
+        ],
+        "fuentes": [
+          "normativa_sintetica_pd.pdf p.2",
+          "normativa_sintetica_pd.pdf p.1",
+          "normativa_sintetica_pd.pdf p.1"
+        ],
+        "scores": [
+          0.8347,
+          0.6857,
+          0.6557
+        ],
+        "rango": 1
+      },
+      {
+        "seccion": "M7",
+        "gold_req": "R6",
+        "recuperados": [
+          "R5+R6+R7",
+          "R3+R4+R5",
+          "R1"
+        ],
+        "fuentes": [
+          "normativa_sintetica_pd.pdf p.1",
+          "normativa_sintetica_pd.pdf p.1",
+          "normativa_sintetica_pd.pdf p.1"
+        ],
+        "scores": [
+          0.7709,
+          0.7336,
+          0.7042
+        ],
+        "rango": 1
+      },
+      {
+        "seccion": "M8",
+        "gold_req": "R7",
+        "recuperados": [
+          "R5+R6+R7",
+          "R10",
+          "R3+R4+R5"
+        ],
+        "fuentes": [
+          "normativa_sintetica_pd.pdf p.1",
+          "normativa_sintetica_pd.pdf p.2",
+          "normativa_sintetica_pd.pdf p.1"
+        ],
+        "scores": [
+          0.7125,
+          0.7003,
+          0.6846
+        ],
+        "rango": 1
+      },
+      {
+        "seccion": "M9",
+        "gold_req": null,
+        "recuperados": [
+          "R10",
+          "R5+R6+R7",
+          "R3+R4+R5"
+        ],
+        "fuentes": [
+          "normativa_sintetica_pd.pdf p.2",
+          "normativa_sintetica_pd.pdf p.1",
+          "normativa_sintetica_pd.pdf p.1"
+        ],
+        "scores": [
+          0.6831,
+          0.6773,
+          0.6354
+        ],
+        "rango": null
+      },
+      {
+        "seccion": "M10",
+        "gold_req": null,
+        "recuperados": [
+          "R1",
+          "R2+R3",
+          "R5+R6+R7"
+        ],
+        "fuentes": [
+          "normativa_sintetica_pd.pdf p.1",
+          "normativa_sintetica_pd.pdf p.1",
+          "normativa_sintetica_pd.pdf p.1"
+        ],
+        "scores": [
+          0.6613,
+          0.6436,
+          0.6286
+        ],
+        "rango": null
+      }
+    ]
+  },
+  "guia_sintetica+anejo9_boe": {
+    "coleccion": "eval_guia_sintetica_anejo9_boe",
+    "n_fragmentos": 355,
+    "seg_indexacion": 99.2,
+    "metricas": {
+      "n_consultas": 8,
+      "hit@1": 0.875,
+      "hit@3": 0.875,
+      "mrr@3": 0.875,
+      "top1_score_con_requisito": [
+        0.7866,
+        0.7308,
+        0.8228,
+        0.8076,
+        0.7403,
+        0.8347,
+        0.7709,
+        0.732
+      ],
+      "top1_score_sin_requisito": [
+        0.6831,
+        0.7213
+      ]
+    },
+    "filas": [
+      {
+        "seccion": "M1",
+        "gold_req": "R1",
+        "recuperados": [
+          "R1",
+          "distractor",
+          "distractor"
+        ],
+        "fuentes": [
+          "normativa_sintetica_pd.pdf p.1",
+          "BOE-A-2017-14334_anejo9.pdf p.34",
+          "BOE-A-2017-14334_anejo9.pdf p.30"
+        ],
+        "scores": [
+          0.7866,
+          0.7347,
+          0.7343
+        ],
+        "rango": 1
+      },
+      {
+        "seccion": "M2",
+        "gold_req": "R2",
+        "recuperados": [
+          "R2+R3",
+          "distractor",
+          "distractor"
+        ],
+        "fuentes": [
+          "normativa_sintetica_pd.pdf p.1",
+          "BOE-A-2017-14334_anejo9.pdf p.13",
+          "BOE-A-2017-14334_anejo9.pdf p.15"
+        ],
+        "scores": [
+          0.7308,
+          0.6973,
+          0.6967
+        ],
+        "rango": 1
+      },
+      {
+        "seccion": "M3",
+        "gold_req": "R3",
+        "recuperados": [
+          "R2+R3",
+          "R3+R4+R5",
+          "distractor"
+        ],
+        "fuentes": [
+          "normativa_sintetica_pd.pdf p.1",
+          "normativa_sintetica_pd.pdf p.1",
+          "BOE-A-2017-14334_anejo9.pdf p.17"
+        ],
+        "scores": [
+          0.8228,
+          0.8001,
+          0.7503
+        ],
+        "rango": 1
+      },
+      {
+        "seccion": "M4",
+        "gold_req": "R4",
+        "recuperados": [
+          "R3+R4+R5",
+          "R1",
+          "R5+R6+R7"
+        ],
+        "fuentes": [
+          "normativa_sintetica_pd.pdf p.1",
+          "normativa_sintetica_pd.pdf p.1",
+          "normativa_sintetica_pd.pdf p.1"
+        ],
+        "scores": [
+          0.8076,
+          0.743,
+          0.7175
+        ],
+        "rango": 1
+      },
+      {
+        "seccion": "M5",
+        "gold_req": "R5",
+        "recuperados": [
+          "R5+R6+R7",
+          "R3+R4+R5",
+          "distractor"
+        ],
+        "fuentes": [
+          "normativa_sintetica_pd.pdf p.1",
+          "normativa_sintetica_pd.pdf p.1",
+          "BOE-A-2017-14334_anejo9.pdf p.25"
+        ],
+        "scores": [
+          0.7403,
+          0.702,
+          0.6941
+        ],
+        "rango": 1
+      },
+      {
+        "seccion": "M6",
+        "gold_req": "R8",
+        "recuperados": [
+          "R8+R9",
+          "distractor",
+          "distractor"
+        ],
+        "fuentes": [
+          "normativa_sintetica_pd.pdf p.2",
+          "BOE-A-2017-14334_anejo9.pdf p.18",
+          "BOE-A-2017-14334_anejo9.pdf p.18"
+        ],
+        "scores": [
+          0.8347,
+          0.7102,
+          0.7087
+        ],
+        "rango": 1
+      },
+      {
+        "seccion": "M7",
+        "gold_req": "R6",
+        "recuperados": [
+          "R5+R6+R7",
+          "R3+R4+R5",
+          "distractor"
+        ],
+        "fuentes": [
+          "normativa_sintetica_pd.pdf p.1",
+          "normativa_sintetica_pd.pdf p.1",
+          "BOE-A-2017-14334_anejo9.pdf p.9"
+        ],
+        "scores": [
+          0.7709,
+          0.7336,
+          0.7164
+        ],
+        "rango": 1
+      },
+      {
+        "seccion": "M8",
+        "gold_req": "R7",
+        "recuperados": [
+          "distractor",
+          "distractor",
+          "distractor"
+        ],
+        "fuentes": [
+          "BOE-A-2017-14334_anejo9.pdf p.30",
+          "BOE-A-2017-14334_anejo9.pdf p.24",
+          "BOE-A-2017-14334_anejo9.pdf p.25"
+        ],
+        "scores": [
+          0.732,
+          0.7197,
+          0.7172
+        ],
+        "rango": null
+      },
+      {
+        "seccion": "M9",
+        "gold_req": null,
+        "recuperados": [
+          "R10",
+          "distractor",
+          "distractor"
+        ],
+        "fuentes": [
+          "normativa_sintetica_pd.pdf p.2",
+          "BOE-A-2017-14334_anejo9.pdf p.10",
+          "BOE-A-2017-14334_anejo9.pdf p.24"
+        ],
+        "scores": [
+          0.6831,
+          0.6799,
+          0.6798
+        ],
+        "rango": null
+      },
+      {
+        "seccion": "M10",
+        "gold_req": null,
+        "recuperados": [
+          "distractor",
+          "distractor",
+          "distractor"
+        ],
+        "fuentes": [
+          "BOE-A-2017-14334_anejo9.pdf p.13",
+          "BOE-A-2017-14334_anejo9.pdf p.6",
+          "BOE-A-2017-14334_anejo9.pdf p.30"
+        ],
+        "scores": [
+          0.7213,
+          0.714,
+          0.7078
+        ],
+        "rango": null
+      }
+    ]
+  }
+}

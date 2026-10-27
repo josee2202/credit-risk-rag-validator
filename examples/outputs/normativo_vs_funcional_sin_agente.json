@@ -1,0 +1,198 @@
+[
+  {
+    "chunk": "Documento metodológico del modelo de PD de hipotecas - Banco Ficticio S.A.\n\nDocumento ficticio redactado para demostrar el sistema. Banco Ficticio S.A. no existe.\n\n1. Definición de default\n\nEl modelo considera en default a los préstamos hipotecarios con más de 90 días de impago en un importe significativo, así como a las operaciones en las que se identifica improbabilidad de pago, por ejemplo por concurso del deudor o refinanciación forzosa. La misma definición se utiliza en el desarrollo del modelo y en la gestión diaria del riesgo de la cartera.\n\n2. Muestra de desarrollo",
+    "relevant_chunks": [
+      "Guía supervisora sintética sobre la estimación de la PD\nDocumento ficticio redactado exclusivamente para demostrar el sistema. No reproduce ninguna norma\nreal, aunque se inspira en principios habituales de la regulación prudencial y contable sobre riesgo de\ncrédito.\nR1. Definición de default\nLa entidad considerará que una exposición está en situación de default cuando el deudor\nacumule más de 90 días de impago en una obligación significativa o cuando se considere\nimprobable que pague sus obligaciones sin recurrir a la ejecución de garantías. La definición se\naplicará de forma homogénea en todas las carteras, en la estimación de parámetros y en la\ngestión diaria del riesgo.\nR2. Profundidad histórica de los datos",
+      "R5. Poder discriminante\nLa capacidad del modelo para ordenar el riesgo se medirá al menos anualmente mediante el\nAUC o el coeficiente de Gini. La entidad fijará umbrales mínimos de rendimiento y un\nprocedimiento de escalado cuando dichos umbrales no se alcancen.\nR6. Calidad de los datos\nLos datos utilizados en el desarrollo y la aplicación del modelo deberán ser completos, exactos y\ntrazables hasta los sistemas de origen. La entidad realizará conciliaciones periódicas con la\ninformación contable y documentará los controles aplicados.\nR7. Ajustes manuales\nLos ajustes manuales sobre las calificaciones (overrides) deberán estar justificados,\ndocumentados y limitados en volumen. Una función independiente de la unidad de desarrollo\nrevisará periódicamente su uso y su impacto en los parámetros.",
+      "desfavorables del ciclo económico. Cuando los datos no sean representativos o presenten\ndeficiencias, la entidad aplicará un margen de conservadurismo cuantificado, documentado y\nproporcional a la incertidumbre de la estimación.\nR4. Calibración y backtesting\nAl menos una vez al año, la entidad comparará la PD estimada de cada grado de rating con la\ntasa de default observada, utilizando el test binomial u otra prueba estadística equivalente. Las\ndesviaciones significativas deberán analizarse y dar lugar a acciones correctoras documentadas.\nR5. Poder discriminante\nLa capacidad del modelo para ordenar el riesgo se medirá al menos anualmente mediante el\nAUC o el coeficiente de Gini. La entidad fijará umbrales mínimos de rendimiento y un"
+    ],
+    "context": "Documento: normativa_sintetica_pd.pdf\nGuía supervisora sintética sobre la estimación de la PD\nDocumento ficticio redactado exclusivamente para demostrar el sistema. No reproduce ninguna norma\nreal, aunque se inspira en principios habituales de la regulación prudencial y contable sobre riesgo de\ncrédito.\nR1. Definición de default\nLa entidad considerará que una exposición está en situación de default cuando el deudor\nacumule más de 90 días de impago en una obligación significativa o cuando se considere\nimprobable que pague sus obligaciones sin recurrir a la ejecución de garantías. La definición se\naplicará de forma homogénea en todas las carteras, en la estimación de parámetros y en la\ngestión diaria del riesgo.\nR2. Profundidad histórica de los datos\n\nDocumento: normativa_sintetica_pd.pdf\nR5. Poder discriminante\nLa capacidad del modelo para ordenar el riesgo se medirá al menos anualmente mediante el\nAUC o el coeficiente de Gini. La entidad fijará umbrales mínimos de rendimiento y un\nprocedimiento de escalado cuando dichos umbrales no se alcancen.\nR6. Calidad de los datos\nLos datos utilizados en el desarrollo y la aplicación del modelo deberán ser completos, exactos y\ntrazables hasta los sistemas de origen. La entidad realizará conciliaciones periódicas con la\ninformación contable y documentará los controles aplicados.\nR7. Ajustes manuales\nLos ajustes manuales sobre las calificaciones (overrides) deberán estar justificados,\ndocumentados y limitados en volumen. Una función independiente de la unidad de desarrollo\nrevisará periódicamente su uso y su impacto en los parámetros.\n\nDocumento: normativa_sintetica_pd.pdf\ndesfavorables del ciclo económico. Cuando los datos no sean representativos o presenten\ndeficiencias, la entidad aplicará un margen de conservadurismo cuantificado, documentado y\nproporcional a la incertidumbre de la estimación.\nR4. Calibración y backtesting\nAl menos una vez al año, la entidad comparará la PD estimada de cada grado de rating con la\ntasa de default observada, utilizando el test binomial u otra prueba estadística equivalente. Las\ndesviaciones significativas deberán analizarse y dar lugar a acciones correctoras documentadas.\nR5. Poder discriminante\nLa capacidad del modelo para ordenar el riesgo se medirá al menos anualmente mediante el\nAUC o el coeficiente de Gini. La entidad fijará umbrales mínimos de rendimiento y un",
+    "sources": [
+      {
+        "filename": "normativa_sintetica_pd.pdf",
+        "page": 1
+      },
+      {
+        "filename": "normativa_sintetica_pd.pdf",
+        "page": 1
+      },
+      {
+        "filename": "normativa_sintetica_pd.pdf",
+        "page": 1
+      }
+    ],
+    "scores": [
+      0.7982,
+      0.7219,
+      0.7152
+    ]
+  },
+  {
+    "chunk": "2. Muestra de desarrollo\n\nLa tasa media de default a largo plazo se ha calculado con la muestra disponible entre enero de 2021 y diciembre de 2023, es decir, tres años de observación. Los años anteriores se han descartado porque procedían de un sistema informático antiguo, sin que se haya documentado un análisis del impacto de esta exclusión.\n\n3. Ciclo económico y conservadurismo",
+    "relevant_chunks": [
+      "aplicará de forma homogénea en todas las carteras, en la estimación de parámetros y en la\ngestión diaria del riesgo.\nR2. Profundidad histórica de los datos\nLa tasa media de default a largo plazo utilizada para calibrar la PD se calculará con un periodo\nde observación de al menos cinco años. Si la entidad dispone de un histórico más largo y\nrelevante, deberá utilizarlo. Las exclusiones de periodos deberán justificarse y documentarse.\nR3. Ciclo económico y margen de conservadurismo\nEl periodo de observación deberá incluir una combinación representativa de años favorables y\ndesfavorables del ciclo económico. Cuando los datos no sean representativos o presenten\ndeficiencias, la entidad aplicará un margen de conservadurismo cuantificado, documentado y",
+      "desfavorables del ciclo económico. Cuando los datos no sean representativos o presenten\ndeficiencias, la entidad aplicará un margen de conservadurismo cuantificado, documentado y\nproporcional a la incertidumbre de la estimación.\nR4. Calibración y backtesting\nAl menos una vez al año, la entidad comparará la PD estimada de cada grado de rating con la\ntasa de default observada, utilizando el test binomial u otra prueba estadística equivalente. Las\ndesviaciones significativas deberán analizarse y dar lugar a acciones correctoras documentadas.\nR5. Poder discriminante\nLa capacidad del modelo para ordenar el riesgo se medirá al menos anualmente mediante el\nAUC o el coeficiente de Gini. La entidad fijará umbrales mínimos de rendimiento y un",
+      "Guía supervisora sintética sobre la estimación de la PD\nDocumento ficticio redactado exclusivamente para demostrar el sistema. No reproduce ninguna norma\nreal, aunque se inspira en principios habituales de la regulación prudencial y contable sobre riesgo de\ncrédito.\nR1. Definición de default\nLa entidad considerará que una exposición está en situación de default cuando el deudor\nacumule más de 90 días de impago en una obligación significativa o cuando se considere\nimprobable que pague sus obligaciones sin recurrir a la ejecución de garantías. La definición se\naplicará de forma homogénea en todas las carteras, en la estimación de parámetros y en la\ngestión diaria del riesgo.\nR2. Profundidad histórica de los datos"
+    ],
+    "context": "Documento: normativa_sintetica_pd.pdf\naplicará de forma homogénea en todas las carteras, en la estimación de parámetros y en la\ngestión diaria del riesgo.\nR2. Profundidad histórica de los datos\nLa tasa media de default a largo plazo utilizada para calibrar la PD se calculará con un periodo\nde observación de al menos cinco años. Si la entidad dispone de un histórico más largo y\nrelevante, deberá utilizarlo. Las exclusiones de periodos deberán justificarse y documentarse.\nR3. Ciclo económico y margen de conservadurismo\nEl periodo de observación deberá incluir una combinación representativa de años favorables y\ndesfavorables del ciclo económico. Cuando los datos no sean representativos o presenten\ndeficiencias, la entidad aplicará un margen de conservadurismo cuantificado, documentado y\n\nDocumento: normativa_sintetica_pd.pdf\ndesfavorables del ciclo económico. Cuando los datos no sean representativos o presenten\ndeficiencias, la entidad aplicará un margen de conservadurismo cuantificado, documentado y\nproporcional a la incertidumbre de la estimación.\nR4. Calibración y backtesting\nAl menos una vez al año, la entidad comparará la PD estimada de cada grado de rating con la\ntasa de default observada, utilizando el test binomial u otra prueba estadística equivalente. Las\ndesviaciones significativas deberán analizarse y dar lugar a acciones correctoras documentadas.\nR5. Poder discriminante\nLa capacidad del modelo para ordenar el riesgo se medirá al menos anualmente mediante el\nAUC o el coeficiente de Gini. La entidad fijará umbrales mínimos de rendimiento y un\n\nDocumento: normativa_sintetica_pd.pdf\nGuía supervisora sintética sobre la estimación de la PD\nDocumento ficticio redactado exclusivamente para demostrar el sistema. No reproduce ninguna norma\nreal, aunque se inspira en principios habituales de la regulación prudencial y contable sobre riesgo de\ncrédito.\nR1. Definición de default\nLa entidad considerará que una exposición está en situación de default cuando el deudor\nacumule más de 90 días de impago en una obligación significativa o cuando se considere\nimprobable que pague sus obligaciones sin recurrir a la ejecución de garantías. La definición se\naplicará de forma homogénea en todas las carteras, en la estimación de parámetros y en la\ngestión diaria del riesgo.\nR2. Profundidad histórica de los datos",
+    "sources": [
+      {
+        "filename": "normativa_sintetica_pd.pdf",
+        "page": 1
+      },
+      {
+        "filename": "normativa_sintetica_pd.pdf",
+        "page": 1
+      },
+      {
+        "filename": "normativa_sintetica_pd.pdf",
+        "page": 1
+      }
+    ],
+    "scores": [
+      0.81,
+      0.7149,
+      0.6733
+    ]
+  },
+  {
+    "chunk": "3. Ciclo económico y conservadurismo\n\nEl periodo de observación corresponde a una fase expansiva del ciclo económico, con tasas de default históricamente bajas. La entidad no aplica ningún margen de conservadurismo sobre la PD calibrada, al considerar que el comportamiento reciente de la cartera es representativo del futuro.\n\n4. Calibración",
+    "relevant_chunks": [
+      "aplicará de forma homogénea en todas las carteras, en la estimación de parámetros y en la\ngestión diaria del riesgo.\nR2. Profundidad histórica de los datos\nLa tasa media de default a largo plazo utilizada para calibrar la PD se calculará con un periodo\nde observación de al menos cinco años. Si la entidad dispone de un histórico más largo y\nrelevante, deberá utilizarlo. Las exclusiones de periodos deberán justificarse y documentarse.\nR3. Ciclo económico y margen de conservadurismo\nEl periodo de observación deberá incluir una combinación representativa de años favorables y\ndesfavorables del ciclo económico. Cuando los datos no sean representativos o presenten\ndeficiencias, la entidad aplicará un margen de conservadurismo cuantificado, documentado y",
+      "desfavorables del ciclo económico. Cuando los datos no sean representativos o presenten\ndeficiencias, la entidad aplicará un margen de conservadurismo cuantificado, documentado y\nproporcional a la incertidumbre de la estimación.\nR4. Calibración y backtesting\nAl menos una vez al año, la entidad comparará la PD estimada de cada grado de rating con la\ntasa de default observada, utilizando el test binomial u otra prueba estadística equivalente. Las\ndesviaciones significativas deberán analizarse y dar lugar a acciones correctoras documentadas.\nR5. Poder discriminante\nLa capacidad del modelo para ordenar el riesgo se medirá al menos anualmente mediante el\nAUC o el coeficiente de Gini. La entidad fijará umbrales mínimos de rendimiento y un",
+      "Guía supervisora sintética sobre la estimación de la PD\nDocumento ficticio redactado exclusivamente para demostrar el sistema. No reproduce ninguna norma\nreal, aunque se inspira en principios habituales de la regulación prudencial y contable sobre riesgo de\ncrédito.\nR1. Definición de default\nLa entidad considerará que una exposición está en situación de default cuando el deudor\nacumule más de 90 días de impago en una obligación significativa o cuando se considere\nimprobable que pague sus obligaciones sin recurrir a la ejecución de garantías. La definición se\naplicará de forma homogénea en todas las carteras, en la estimación de parámetros y en la\ngestión diaria del riesgo.\nR2. Profundidad histórica de los datos"
+    ],
+    "context": "Documento: normativa_sintetica_pd.pdf\naplicará de forma homogénea en todas las carteras, en la estimación de parámetros y en la\ngestión diaria del riesgo.\nR2. Profundidad histórica de los datos\nLa tasa media de default a largo plazo utilizada para calibrar la PD se calculará con un periodo\nde observación de al menos cinco años. Si la entidad dispone de un histórico más largo y\nrelevante, deberá utilizarlo. Las exclusiones de periodos deberán justificarse y documentarse.\nR3. Ciclo económico y margen de conservadurismo\nEl periodo de observación deberá incluir una combinación representativa de años favorables y\ndesfavorables del ciclo económico. Cuando los datos no sean representativos o presenten\ndeficiencias, la entidad aplicará un margen de conservadurismo cuantificado, documentado y\n\nDocumento: normativa_sintetica_pd.pdf\ndesfavorables del ciclo económico. Cuando los datos no sean representativos o presenten\ndeficiencias, la entidad aplicará un margen de conservadurismo cuantificado, documentado y\nproporcional a la incertidumbre de la estimación.\nR4. Calibración y backtesting\nAl menos una vez al año, la entidad comparará la PD estimada de cada grado de rating con la\ntasa de default observada, utilizando el test binomial u otra prueba estadística equivalente. Las\ndesviaciones significativas deberán analizarse y dar lugar a acciones correctoras documentadas.\nR5. Poder discriminante\nLa capacidad del modelo para ordenar el riesgo se medirá al menos anualmente mediante el\nAUC o el coeficiente de Gini. La entidad fijará umbrales mínimos de rendimiento y un\n\nDocumento: normativa_sintetica_pd.pdf\nGuía supervisora sintética sobre la estimación de la PD\nDocumento ficticio redactado exclusivamente para demostrar el sistema. No reproduce ninguna norma\nreal, aunque se inspira en principios habituales de la regulación prudencial y contable sobre riesgo de\ncrédito.\nR1. Definición de default\nLa entidad considerará que una exposición está en situación de default cuando el deudor\nacumule más de 90 días de impago en una obligación significativa o cuando se considere\nimprobable que pague sus obligaciones sin recurrir a la ejecución de garantías. La definición se\naplicará de forma homogénea en todas las carteras, en la estimación de parámetros y en la\ngestión diaria del riesgo.\nR2. Profundidad histórica de los datos",
+    "sources": [
+      {
+        "filename": "normativa_sintetica_pd.pdf",
+        "page": 1
+      },
+      {
+        "filename": "normativa_sintetica_pd.pdf",
+        "page": 1
+      },
+      {
+        "filename": "normativa_sintetica_pd.pdf",
+        "page": 1
+      }
+    ],
+    "scores": [
+      0.8502,
+      0.7866,
+      0.6939
+    ]
+  },
+  {
+    "chunk": "4. Calibración\n\nCada año se compara la PD asignada a cada grado de rating con la tasa de default observada mediante el test binomial con un nivel de confianza del 95%. Las desviaciones significativas se analizan en el comité de modelos y se documentan junto con las acciones correctoras acordadas.\n\n5. Poder discriminante\n\nEl poder discriminante se mide anualmente con el AUC, que en la última revisión fue de 0,81. Se ha fijado un umbral mínimo de 0,70; si el AUC queda por debajo, el caso se escala al comité de riesgos para decidir si se recalibra o se redesarrolla el modelo.",
+    "relevant_chunks": [
+      "desfavorables del ciclo económico. Cuando los datos no sean representativos o presenten\ndeficiencias, la entidad aplicará un margen de conservadurismo cuantificado, documentado y\nproporcional a la incertidumbre de la estimación.\nR4. Calibración y backtesting\nAl menos una vez al año, la entidad comparará la PD estimada de cada grado de rating con la\ntasa de default observada, utilizando el test binomial u otra prueba estadística equivalente. Las\ndesviaciones significativas deberán analizarse y dar lugar a acciones correctoras documentadas.\nR5. Poder discriminante\nLa capacidad del modelo para ordenar el riesgo se medirá al menos anualmente mediante el\nAUC o el coeficiente de Gini. La entidad fijará umbrales mínimos de rendimiento y un",
+      "R5. Poder discriminante\nLa capacidad del modelo para ordenar el riesgo se medirá al menos anualmente mediante el\nAUC o el coeficiente de Gini. La entidad fijará umbrales mínimos de rendimiento y un\nprocedimiento de escalado cuando dichos umbrales no se alcancen.\nR6. Calidad de los datos\nLos datos utilizados en el desarrollo y la aplicación del modelo deberán ser completos, exactos y\ntrazables hasta los sistemas de origen. La entidad realizará conciliaciones periódicas con la\ninformación contable y documentará los controles aplicados.\nR7. Ajustes manuales\nLos ajustes manuales sobre las calificaciones (overrides) deberán estar justificados,\ndocumentados y limitados en volumen. Una función independiente de la unidad de desarrollo\nrevisará periódicamente su uso y su impacto en los parámetros.",
+      "Guía supervisora sintética sobre la estimación de la PD\nDocumento ficticio redactado exclusivamente para demostrar el sistema. No reproduce ninguna norma\nreal, aunque se inspira en principios habituales de la regulación prudencial y contable sobre riesgo de\ncrédito.\nR1. Definición de default\nLa entidad considerará que una exposición está en situación de default cuando el deudor\nacumule más de 90 días de impago en una obligación significativa o cuando se considere\nimprobable que pague sus obligaciones sin recurrir a la ejecución de garantías. La definición se\naplicará de forma homogénea en todas las carteras, en la estimación de parámetros y en la\ngestión diaria del riesgo.\nR2. Profundidad histórica de los datos"
+    ],
+    "context": "Documento: normativa_sintetica_pd.pdf\ndesfavorables del ciclo económico. Cuando los datos no sean representativos o presenten\ndeficiencias, la entidad aplicará un margen de conservadurismo cuantificado, documentado y\nproporcional a la incertidumbre de la estimación.\nR4. Calibración y backtesting\nAl menos una vez al año, la entidad comparará la PD estimada de cada grado de rating con la\ntasa de default observada, utilizando el test binomial u otra prueba estadística equivalente. Las\ndesviaciones significativas deberán analizarse y dar lugar a acciones correctoras documentadas.\nR5. Poder discriminante\nLa capacidad del modelo para ordenar el riesgo se medirá al menos anualmente mediante el\nAUC o el coeficiente de Gini. La entidad fijará umbrales mínimos de rendimiento y un\n\nDocumento: normativa_sintetica_pd.pdf\nR5. Poder discriminante\nLa capacidad del modelo para ordenar el riesgo se medirá al menos anualmente mediante el\nAUC o el coeficiente de Gini. La entidad fijará umbrales mínimos de rendimiento y un\nprocedimiento de escalado cuando dichos umbrales no se alcancen.\nR6. Calidad de los datos\nLos datos utilizados en el desarrollo y la aplicación del modelo deberán ser completos, exactos y\ntrazables hasta los sistemas de origen. La entidad realizará conciliaciones periódicas con la\ninformación contable y documentará los controles aplicados.\nR7. Ajustes manuales\nLos ajustes manuales sobre las calificaciones (overrides) deberán estar justificados,\ndocumentados y limitados en volumen. Una función independiente de la unidad de desarrollo\nrevisará periódicamente su uso y su impacto en los parámetros.\n\nDocumento: normativa_sintetica_pd.pdf\nGuía supervisora sintética sobre la estimación de la PD\nDocumento ficticio redactado exclusivamente para demostrar el sistema. No reproduce ninguna norma\nreal, aunque se inspira en principios habituales de la regulación prudencial y contable sobre riesgo de\ncrédito.\nR1. Definición de default\nLa entidad considerará que una exposición está en situación de default cuando el deudor\nacumule más de 90 días de impago en una obligación significativa o cuando se considere\nimprobable que pague sus obligaciones sin recurrir a la ejecución de garantías. La definición se\naplicará de forma homogénea en todas las carteras, en la estimación de parámetros y en la\ngestión diaria del riesgo.\nR2. Profundidad histórica de los datos",
+    "sources": [
+      {
+        "filename": "normativa_sintetica_pd.pdf",
+        "page": 1
+      },
+      {
+        "filename": "normativa_sintetica_pd.pdf",
+        "page": 1
+      },
+      {
+        "filename": "normativa_sintetica_pd.pdf",
+        "page": 1
+      }
+    ],
+    "scores": [
+      0.828,
+      0.8129,
+      0.7291
+    ]
+  },
+  {
+    "chunk": "6. Escenarios prospectivos\n\nPara el cálculo de la pérdida esperada bajo IFRS 9 se utiliza un único escenario macroeconómico, el escenario base publicado por el servicio de estudios, sin escenarios alternativos ni ponderaciones por probabilidad.\n\n7. Calidad de los datos\n\nLos datos del modelo proceden del almacén corporativo y se concilian mensualmente con la contabilidad. Cada variable es trazable hasta su sistema de origen y los controles de completitud y exactitud se documentan en un registro de calidad del dato.\n\n8. Ajustes manuales",
+    "relevant_chunks": [
+      "R8. Información prospectiva\nPara la estimación de pérdidas esperadas bajo IFRS 9, la PD incorporará información\nprospectiva mediante al menos tres escenarios macroeconómicos (base, adverso y favorable)\nponderados por su probabilidad de ocurrencia. La elección de escenarios y ponderaciones\ndeberá justificarse.\nR9. PD a lo largo de la vida de la operación\nPara las exposiciones con incremento significativo del riesgo, la entidad estimará la PD durante\ntoda la vida esperada de la operación, utilizando curvas de supervivencia, matrices de transición\nu otra metodología debidamente justificada.\nR10. Validación independiente\nUna unidad de validación independiente de la de desarrollo revisará el modelo al menos una vez",
+      "R5. Poder discriminante\nLa capacidad del modelo para ordenar el riesgo se medirá al menos anualmente mediante el\nAUC o el coeficiente de Gini. La entidad fijará umbrales mínimos de rendimiento y un\nprocedimiento de escalado cuando dichos umbrales no se alcancen.\nR6. Calidad de los datos\nLos datos utilizados en el desarrollo y la aplicación del modelo deberán ser completos, exactos y\ntrazables hasta los sistemas de origen. La entidad realizará conciliaciones periódicas con la\ninformación contable y documentará los controles aplicados.\nR7. Ajustes manuales\nLos ajustes manuales sobre las calificaciones (overrides) deberán estar justificados,\ndocumentados y limitados en volumen. Una función independiente de la unidad de desarrollo\nrevisará periódicamente su uso y su impacto en los parámetros.",
+      "desfavorables del ciclo económico. Cuando los datos no sean representativos o presenten\ndeficiencias, la entidad aplicará un margen de conservadurismo cuantificado, documentado y\nproporcional a la incertidumbre de la estimación.\nR4. Calibración y backtesting\nAl menos una vez al año, la entidad comparará la PD estimada de cada grado de rating con la\ntasa de default observada, utilizando el test binomial u otra prueba estadística equivalente. Las\ndesviaciones significativas deberán analizarse y dar lugar a acciones correctoras documentadas.\nR5. Poder discriminante\nLa capacidad del modelo para ordenar el riesgo se medirá al menos anualmente mediante el\nAUC o el coeficiente de Gini. La entidad fijará umbrales mínimos de rendimiento y un"
+    ],
+    "context": "Documento: normativa_sintetica_pd.pdf\nR8. Información prospectiva\nPara la estimación de pérdidas esperadas bajo IFRS 9, la PD incorporará información\nprospectiva mediante al menos tres escenarios macroeconómicos (base, adverso y favorable)\nponderados por su probabilidad de ocurrencia. La elección de escenarios y ponderaciones\ndeberá justificarse.\nR9. PD a lo largo de la vida de la operación\nPara las exposiciones con incremento significativo del riesgo, la entidad estimará la PD durante\ntoda la vida esperada de la operación, utilizando curvas de supervivencia, matrices de transición\nu otra metodología debidamente justificada.\nR10. Validación independiente\nUna unidad de validación independiente de la de desarrollo revisará el modelo al menos una vez\n\nDocumento: normativa_sintetica_pd.pdf\nR5. Poder discriminante\nLa capacidad del modelo para ordenar el riesgo se medirá al menos anualmente mediante el\nAUC o el coeficiente de Gini. La entidad fijará umbrales mínimos de rendimiento y un\nprocedimiento de escalado cuando dichos umbrales no se alcancen.\nR6. Calidad de los datos\nLos datos utilizados en el desarrollo y la aplicación del modelo deberán ser completos, exactos y\ntrazables hasta los sistemas de origen. La entidad realizará conciliaciones periódicas con la\ninformación contable y documentará los controles aplicados.\nR7. Ajustes manuales\nLos ajustes manuales sobre las calificaciones (overrides) deberán estar justificados,\ndocumentados y limitados en volumen. Una función independiente de la unidad de desarrollo\nrevisará periódicamente su uso y su impacto en los parámetros.\n\nDocumento: normativa_sintetica_pd.pdf\ndesfavorables del ciclo económico. Cuando los datos no sean representativos o presenten\ndeficiencias, la entidad aplicará un margen de conservadurismo cuantificado, documentado y\nproporcional a la incertidumbre de la estimación.\nR4. Calibración y backtesting\nAl menos una vez al año, la entidad comparará la PD estimada de cada grado de rating con la\ntasa de default observada, utilizando el test binomial u otra prueba estadística equivalente. Las\ndesviaciones significativas deberán analizarse y dar lugar a acciones correctoras documentadas.\nR5. Poder discriminante\nLa capacidad del modelo para ordenar el riesgo se medirá al menos anualmente mediante el\nAUC o el coeficiente de Gini. La entidad fijará umbrales mínimos de rendimiento y un",
+    "sources": [
+      {
+        "filename": "normativa_sintetica_pd.pdf",
+        "page": 2
+      },
+      {
+        "filename": "normativa_sintetica_pd.pdf",
+        "page": 1
+      },
+      {
+        "filename": "normativa_sintetica_pd.pdf",
+        "page": 1
+      }
+    ],
+    "scores": [
+      0.8519,
+      0.7862,
+      0.7585
+    ]
+  },
+  {
+    "chunk": "8. Ajustes manuales\n\nLos ajustes manuales de rating requieren una justificación escrita, quedan registrados en la herramienta de admisión y no pueden superar el 5% de las operaciones. La unidad de validación revisa su uso cada semestre.\n\n9. Organización del equipo\n\nEl equipo de modelización está formado por cuatro analistas y un responsable. Las reuniones de seguimiento se celebran los lunes y la documentación de trabajo se guarda en la intranet del departamento.\n\n10. Formato del documento",
+    "relevant_chunks": [
+      "u otra metodología debidamente justificada.\nR10. Validación independiente\nUna unidad de validación independiente de la de desarrollo revisará el modelo al menos una vez\nal año. Sus conclusiones y recomendaciones se comunicarán a la alta dirección y se realizará un\nseguimiento de su implantación.",
+      "R5. Poder discriminante\nLa capacidad del modelo para ordenar el riesgo se medirá al menos anualmente mediante el\nAUC o el coeficiente de Gini. La entidad fijará umbrales mínimos de rendimiento y un\nprocedimiento de escalado cuando dichos umbrales no se alcancen.\nR6. Calidad de los datos\nLos datos utilizados en el desarrollo y la aplicación del modelo deberán ser completos, exactos y\ntrazables hasta los sistemas de origen. La entidad realizará conciliaciones periódicas con la\ninformación contable y documentará los controles aplicados.\nR7. Ajustes manuales\nLos ajustes manuales sobre las calificaciones (overrides) deberán estar justificados,\ndocumentados y limitados en volumen. Una función independiente de la unidad de desarrollo\nrevisará periódicamente su uso y su impacto en los parámetros.",
+      "R8. Información prospectiva\nPara la estimación de pérdidas esperadas bajo IFRS 9, la PD incorporará información\nprospectiva mediante al menos tres escenarios macroeconómicos (base, adverso y favorable)\nponderados por su probabilidad de ocurrencia. La elección de escenarios y ponderaciones\ndeberá justificarse.\nR9. PD a lo largo de la vida de la operación\nPara las exposiciones con incremento significativo del riesgo, la entidad estimará la PD durante\ntoda la vida esperada de la operación, utilizando curvas de supervivencia, matrices de transición\nu otra metodología debidamente justificada.\nR10. Validación independiente\nUna unidad de validación independiente de la de desarrollo revisará el modelo al menos una vez"
+    ],
+    "context": "Documento: normativa_sintetica_pd.pdf\nu otra metodología debidamente justificada.\nR10. Validación independiente\nUna unidad de validación independiente de la de desarrollo revisará el modelo al menos una vez\nal año. Sus conclusiones y recomendaciones se comunicarán a la alta dirección y se realizará un\nseguimiento de su implantación.\n\nDocumento: normativa_sintetica_pd.pdf\nR5. Poder discriminante\nLa capacidad del modelo para ordenar el riesgo se medirá al menos anualmente mediante el\nAUC o el coeficiente de Gini. La entidad fijará umbrales mínimos de rendimiento y un\nprocedimiento de escalado cuando dichos umbrales no se alcancen.\nR6. Calidad de los datos\nLos datos utilizados en el desarrollo y la aplicación del modelo deberán ser completos, exactos y\ntrazables hasta los sistemas de origen. La entidad realizará conciliaciones periódicas con la\ninformación contable y documentará los controles aplicados.\nR7. Ajustes manuales\nLos ajustes manuales sobre las calificaciones (overrides) deberán estar justificados,\ndocumentados y limitados en volumen. Una función independiente de la unidad de desarrollo\nrevisará periódicamente su uso y su impacto en los parámetros.\n\nDocumento: normativa_sintetica_pd.pdf\nR8. Información prospectiva\nPara la estimación de pérdidas esperadas bajo IFRS 9, la PD incorporará información\nprospectiva mediante al menos tres escenarios macroeconómicos (base, adverso y favorable)\nponderados por su probabilidad de ocurrencia. La elección de escenarios y ponderaciones\ndeberá justificarse.\nR9. PD a lo largo de la vida de la operación\nPara las exposiciones con incremento significativo del riesgo, la entidad estimará la PD durante\ntoda la vida esperada de la operación, utilizando curvas de supervivencia, matrices de transición\nu otra metodología debidamente justificada.\nR10. Validación independiente\nUna unidad de validación independiente de la de desarrollo revisará el modelo al menos una vez",
+    "sources": [
+      {
+        "filename": "normativa_sintetica_pd.pdf",
+        "page": 2
+      },
+      {
+        "filename": "normativa_sintetica_pd.pdf",
+        "page": 1
+      },
+      {
+        "filename": "normativa_sintetica_pd.pdf",
+        "page": 2
+      }
+    ],
+    "scores": [
+      0.7495,
+      0.7381,
+      0.7249
+    ]
+  },
+  {
+    "chunk": "10. Formato del documento\n\nEste documento sigue la guía de estilo corporativa: tipografía Arial de 11 puntos, títulos numerados y una tabla de control de versiones en la portada.",
+    "relevant_chunks": [
+      "Guía supervisora sintética sobre la estimación de la PD\nDocumento ficticio redactado exclusivamente para demostrar el sistema. No reproduce ninguna norma\nreal, aunque se inspira en principios habituales de la regulación prudencial y contable sobre riesgo de\ncrédito.\nR1. Definición de default\nLa entidad considerará que una exposición está en situación de default cuando el deudor\nacumule más de 90 días de impago en una obligación significativa o cuando se considere\nimprobable que pague sus obligaciones sin recurrir a la ejecución de garantías. La definición se\naplicará de forma homogénea en todas las carteras, en la estimación de parámetros y en la\ngestión diaria del riesgo.\nR2. Profundidad histórica de los datos",
+      "aplicará de forma homogénea en todas las carteras, en la estimación de parámetros y en la\ngestión diaria del riesgo.\nR2. Profundidad histórica de los datos\nLa tasa media de default a largo plazo utilizada para calibrar la PD se calculará con un periodo\nde observación de al menos cinco años. Si la entidad dispone de un histórico más largo y\nrelevante, deberá utilizarlo. Las exclusiones de periodos deberán justificarse y documentarse.\nR3. Ciclo económico y margen de conservadurismo\nEl periodo de observación deberá incluir una combinación representativa de años favorables y\ndesfavorables del ciclo económico. Cuando los datos no sean representativos o presenten\ndeficiencias, la entidad aplicará un margen de conservadurismo cuantificado, documentado y",
+      "R8. Información prospectiva\nPara la estimación de pérdidas esperadas bajo IFRS 9, la PD incorporará información\nprospectiva mediante al menos tres escenarios macroeconómicos (base, adverso y favorable)\nponderados por su probabilidad de ocurrencia. La elección de escenarios y ponderaciones\ndeberá justificarse.\nR9. PD a lo largo de la vida de la operación\nPara las exposiciones con incremento significativo del riesgo, la entidad estimará la PD durante\ntoda la vida esperada de la operación, utilizando curvas de supervivencia, matrices de transición\nu otra metodología debidamente justificada.\nR10. Validación independiente\nUna unidad de validación independiente de la de desarrollo revisará el modelo al menos una vez"
+    ],
+    "context": "Documento: normativa_sintetica_pd.pdf\nGuía supervisora sintética sobre la estimación de la PD\nDocumento ficticio redactado exclusivamente para demostrar el sistema. No reproduce ninguna norma\nreal, aunque se inspira en principios habituales de la regulación prudencial y contable sobre riesgo de\ncrédito.\nR1. Definición de default\nLa entidad considerará que una exposición está en situación de default cuando el deudor\nacumule más de 90 días de impago en una obligación significativa o cuando se considere\nimprobable que pague sus obligaciones sin recurrir a la ejecución de garantías. La definición se\naplicará de forma homogénea en todas las carteras, en la estimación de parámetros y en la\ngestión diaria del riesgo.\nR2. Profundidad histórica de los datos\n\nDocumento: normativa_sintetica_pd.pdf\naplicará de forma homogénea en todas las carteras, en la estimación de parámetros y en la\ngestión diaria del riesgo.\nR2. Profundidad histórica de los datos\nLa tasa media de default a largo plazo utilizada para calibrar la PD se calculará con un periodo\nde observación de al menos cinco años. Si la entidad dispone de un histórico más largo y\nrelevante, deberá utilizarlo. Las exclusiones de periodos deberán justificarse y documentarse.\nR3. Ciclo económico y margen de conservadurismo\nEl periodo de observación deberá incluir una combinación representativa de años favorables y\ndesfavorables del ciclo económico. Cuando los datos no sean representativos o presenten\ndeficiencias, la entidad aplicará un margen de conservadurismo cuantificado, documentado y\n\nDocumento: normativa_sintetica_pd.pdf\nR8. Información prospectiva\nPara la estimación de pérdidas esperadas bajo IFRS 9, la PD incorporará información\nprospectiva mediante al menos tres escenarios macroeconómicos (base, adverso y favorable)\nponderados por su probabilidad de ocurrencia. La elección de escenarios y ponderaciones\ndeberá justificarse.\nR9. PD a lo largo de la vida de la operación\nPara las exposiciones con incremento significativo del riesgo, la entidad estimará la PD durante\ntoda la vida esperada de la operación, utilizando curvas de supervivencia, matrices de transición\nu otra metodología debidamente justificada.\nR10. Validación independiente\nUna unidad de validación independiente de la de desarrollo revisará el modelo al menos una vez",
+    "sources": [
+      {
+        "filename": "normativa_sintetica_pd.pdf",
+        "page": 1
+      },
+      {
+        "filename": "normativa_sintetica_pd.pdf",
+        "page": 1
+      },
+      {
+        "filename": "normativa_sintetica_pd.pdf",
+        "page": 2
+      }
+    ],
+    "scores": [
+      0.6576,
+      0.6432,
+      0.6346
+    ]
+  }
+]

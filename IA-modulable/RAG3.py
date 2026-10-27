@@ -32,7 +32,7 @@ from config import config
 cfg_param = config.cfg_param
 
 from langchain_ollama import OllamaEmbeddings
-ollama_endpoint = f"{cfg_param['ollama']['host']}:{cfg_param['ollama']['port']}"
+ollama_endpoint = f"http://{cfg_param['ollama']['host']}:{cfg_param['ollama']['port']}"
 embed_model_name = cfg_param['llm']['embed']['name']
 
 
@@ -49,8 +49,6 @@ nomic_embedding_model = OllamaEmbeddings(
             model=embed_model_name
         )
 
-import spacy
-
 from typing import List, Optional
 
 from langchain_community.document_loaders import (DirectoryLoader, 
@@ -58,25 +56,22 @@ from langchain_community.document_loaders import (DirectoryLoader,
 # from langchain_unstructured import UnstructuredLoader
 from langchain_core.documents import Document
 
-# Cargar spaCy (puedes mover esto al constructor si lo prefieres)
-nlp = spacy.load("es_core_news_sm")
-
 from X_qderant import QdrantHandler
 
 # * FUNCIÓN RAG  
 # * ==================================================================================================================
 
 class RAG:
-    def __init__(self, docPath, embeddings_func=nomic_embedding_model):
+    def __init__(self, docPath, embeddings_func=None):
         self.path = docPath
-        self.embeddings_func = embeddings_func  # Función de embedding (por ejemplo, OpenAIEmbeddings)
+        # Función de embedding (por defecto, nomic-embed-text vía Ollama; se resuelve aquí para poder sustituirla)
+        self.embeddings_func = embeddings_func or nomic_embedding_model
         self.texts = []  # Lista de textos para almacenar chunks
        
         self.results = None
 
-        # Qdrant h self.vector_store = Noneandler
-        self.qdrant = QdrantHandler(collection_name='prueba'
-                                    )
+        # Handler de Qdrant (usa la misma función de embedding que el resto del pipeline)
+        self.qdrant = QdrantHandler(embeddings_func=self.embeddings_func, collection_name='prueba')
 
     # ! Preprocesamiento
     def read_document(
@@ -226,10 +221,14 @@ class RAG:
         for i, chunk in enumerate(splits_query):
             text = chunk.page_content if hasattr(chunk, 'page_content') else str(chunk)
             print(f"Chunk {i+1}/{len(splits_query)}: {text[:50]}...")
-            rel, ctx = self.qdrant_retriever(text, k=3, collection_name=collection_name)
+            hits = self.qdrant.qdrant_search(text, k=3, collection_name=collection_name)
+            ctx = '\n\n'.join(f"Documento: {h['filename']}\n{h['text']}" for h in hits)
             results.append({'chunk': text, 
-                            'relevant_chunks': rel, 
-                            'context': ctx})
+                            'relevant_chunks': [h['text'] for h in hits], 
+                            'context': ctx,
+                            # Trazabilidad: fuente, página (PDF) y similitud coseno de cada fragmento recuperado
+                            'sources': [{'filename': h['filename'], 'page': h['page']} for h in hits],
+                            'scores': [round(h['score'], 4) for h in hits]})
         self.results = results
         
         return results

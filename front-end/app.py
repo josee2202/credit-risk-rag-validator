@@ -4,6 +4,10 @@ import sys
 import pandas as pd
 import requests
 import time
+import os
+
+# URL del backend FastAPI (configurable para despliegues distintos de localhost)
+API_URL = os.getenv("API_URL", "http://localhost:8000")
 
 # * === CONFIGURACIÓN DEL ENTORNO Y CARGA DEL MÓDULO EXTERNO ===================================
 
@@ -121,7 +125,7 @@ with col1:
 
     ### 🎯 Pasos a seguir   
 
-     1️⃣ - **📁 Sube documentos de referencia**  → Crea o elige tu ** el nombre colección** (más rápido si ya existe)
+     1️⃣ - **📁 Sube documentos de referencia**  → Crea o elige tu **colección** (más rápido si ya existe)
 
      2️⃣ - **📄 Añade documento de consulta**  → Ajusta el **% a validar** si solo quieres una prueba
     
@@ -185,7 +189,7 @@ with st.sidebar:
     
     # Obtener colecciones existentes
     try:
-        response = requests.get("http://localhost:8000/colecciones")
+        response = requests.get(f"{API_URL}/colecciones")
         colecciones_existentes = response.json().get("colecciones", [])
     except:
         colecciones_existentes = []
@@ -265,7 +269,7 @@ with st.sidebar:
 
     # Descripciones en formato más compacto
     descripciones = {
-        "Normativo vs Funcional": "📋 Realiza una comparación entre lagislación y el documento metodológico del banco",
+        "Normativo vs Funcional": "📋 Realiza una comparación entre legislación y el documento metodológico del banco",
         "Funcional vs Técnico": "⚙️ Compara el documento técnico (que explica el desarrollo) con el metodológico",
         "Código vs Técnico": "💻 Compara lo que se ha implementado con lo que explica el banco que ha hecho",
         "Código vs Estadístico": "📊 Verificar si cumple los test estadísticos relevantes"
@@ -322,18 +326,19 @@ if st.session_state.get("procesando", False):
     
     # Procesamiento real
     try:
-        files = {
-            "file_ref": (
-                st.session_state["documento_referencia"][0].name,
-                st.session_state["documento_referencia"][0],
-                st.session_state["documento_referencia"][0].type,
-            ),
-            "file_query": (
+        # Se envían todos los documentos de referencia (antes solo el primero)
+        files = [
+            ("file_ref", (doc.name, doc.getvalue(), doc.type))
+            for doc in st.session_state["documento_referencia"]
+        ]
+        files.append((
+            "file_query",
+            (
                 st.session_state["documentos_consulta"][0].name,
-                st.session_state["documentos_consulta"][0],
+                st.session_state["documentos_consulta"][0].getvalue(),
                 st.session_state["documentos_consulta"][0].type,
             ),
-        }
+        ))
 
         form_data = {
             "collection_name": nombre_final,
@@ -342,7 +347,7 @@ if st.session_state.get("procesando", False):
             "tipo_validacion": st.session_state.get("tipo_validacion", "Normativo vs Funcional")
         }
 
-        response = requests.post("http://localhost:8000/validar", files=files, data=form_data)
+        response = requests.post(f"{API_URL}/validar", files=files, data=form_data)
 
         if response.status_code == 200:
             resultados = response.json()["resultados"]
@@ -350,14 +355,20 @@ if st.session_state.get("procesando", False):
             # Reformatear resultados
             formateados = []
             for res in resultados:
+                # Puede haber menos de 3 fragmentos recuperados (colección pequeña): se rellena con None
+                relevantes = (res.get("relevant_chunks") or []) + [None, None, None]
+                fuentes = [
+                    f"{s.get('filename')}" + (f" p.{s['page']}" if s.get("page") else "") + f" · {score:.3f}"
+                    for s, score in zip(res.get("sources", []), res.get("scores", []))
+                ]
+                # Fuentes y veredicto antes que los textos completos, para verlos sin desplazamiento horizontal
                 fila = {
                     "Consulta": res.get("chunk", ""),
-                    "Texto 1": res.get("relevant_chunks", [None, None, None])[0],
-                    "Texto 2": res.get("relevant_chunks", [None, None, None])[1],
-                    "Texto 3": res.get("relevant_chunks", [None, None, None])[2],
+                    "Fuentes (similitud)": " | ".join(fuentes),
                 }
                 if "respuesta" in res:
                     fila["Respuesta"] = res["respuesta"]
+                fila.update({"Texto 1": relevantes[0], "Texto 2": relevantes[1], "Texto 3": relevantes[2]})
                 formateados.append(fila)
 
             df_result = pd.DataFrame(formateados)
@@ -366,7 +377,11 @@ if st.session_state.get("procesando", False):
             st.rerun()
         else:
             st.session_state["procesando"] = False
-            st.error(f"❌ Error del servidor: {response.status_code}")
+            try:
+                detalle = response.json().get("detail", response.text)
+            except ValueError:
+                detalle = response.text
+            st.error(f"❌ Error del servidor ({response.status_code}): {detalle}")
 
     except Exception as e:
         st.session_state["procesando"] = False
@@ -376,9 +391,8 @@ if st.session_state.get("procesando", False):
 
 if st.session_state["resultado_validacion"] is not None and not st.session_state.get("procesando", False):
     st.markdown("---")
-    st.markdown('<div class="success-box">', unsafe_allow_html=True)
-    st.markdown("### ✅ Validación completada exitosamente")
-    st.markdown('</div>', unsafe_allow_html=True)
+    # Un único bloque HTML: Streamlit renderiza cada st.markdown por separado y el <div> quedaba vacío
+    st.markdown('<div class="success-box"><h3>✅ Validación completada exitosamente</h3></div>', unsafe_allow_html=True)
     
     # Métricas rápidas
     col1, col2, col3, col4 = st.columns(4)

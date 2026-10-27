@@ -30,3 +30,6 @@ IA-modulable/PAQUETES\ /
 
 # --- Datos locales de servicios ---
 qdrant_storage/
+
+# --- Documentos públicos descargados por script (no se redistribuyen) ---
+examples/public/*.pdf
