@@ -1,5 +1,6 @@
-from fastapi import FastAPI, UploadFile, File, Form
+from fastapi import FastAPI, UploadFile, File, Form, HTTPException
 from fastapi.responses import JSONResponse
+from typing import List
 import shutil
 import tempfile
 
@@ -58,7 +59,7 @@ def get_prompt_by_validation_type(tipo_validacion):
     """
     prompts = {
         "Normativo vs Funcional": prompt_definitivos['evaluar_alineacion_normativa'],
-        "Funcional vs Técnico": prompt_definitivos['evaluar_tecnico_codigo'],
+        "Funcional vs Técnico": prompt_definitivos['evaluar_tecnico_funcional'],
         "Código vs Técnico": prompt_definitivos['evaluar_descriptivo_tecnico'],
         "Código vs Estadístico": prompt_definitivos['evaluar_alineacion_normativa']
     }
@@ -67,8 +68,17 @@ def get_prompt_by_validation_type(tipo_validacion):
 
 app = FastAPI()
 
+def guardar_upload(upload: UploadFile, carpeta: str) -> str:
+    """Guarda un fichero subido conservando su nombre original (aparece como fuente en los resultados)."""
+    os.makedirs(carpeta, exist_ok=True)
+    ruta = os.path.join(carpeta, os.path.basename(upload.filename))
+    with open(ruta, "wb") as f:
+        shutil.copyfileobj(upload.file, f)
+    return ruta
+
+
 @app.post("/validar")
-async def validar_documentos(file_ref: UploadFile = File(...),
+async def validar_documentos(file_ref: List[UploadFile] = File(...),
                             file_query: UploadFile = File(...), 
                             collection_name: str = Form(...),
                             doc_sample_ratio: float = Form(1.0),
@@ -79,28 +89,37 @@ async def validar_documentos(file_ref: UploadFile = File(...),
     print(f"🤖 ¿Validación con agente?: {'Sí' if usar_agente else 'No'}")
     print(f"🔍 Tipo de validación: {tipo_validacion}")
 
-    
-    with tempfile.TemporaryDirectory() as tmp:
-        # Guardar archivos
-        ref_path = f"{tmp}/ref_{file_ref.filename}"
-        with open(ref_path, "wb") as f:
-            shutil.copyfileobj(file_ref.file, f)
+    try:
+        return _ejecutar_validacion(file_ref, file_query, collection_name, doc_sample_ratio, usar_agente, tipo_validacion)
+    except (ValueError, TypeError, FileNotFoundError) as e:
+        # Entrada no válida: formato no soportado, documento sin texto extraíble...
+        raise HTTPException(status_code=400, detail=str(e))
+    except Exception as e:
+        # Antes los fallos de Ollama/Qdrant se silenciaban y se devolvía 200 sin evidencias
+        raise HTTPException(status_code=500, detail=f"Error en el pipeline (¿están Ollama y Qdrant en marcha?): {e}")
 
-        query_path = f"{tmp}/query_{file_query.filename}"
-        with open(query_path, "wb") as f:
-            shutil.copyfileobj(file_query.file, f)
+
+def _ejecutar_validacion(file_ref, file_query, collection_name, doc_sample_ratio, usar_agente, tipo_validacion):
+    with tempfile.TemporaryDirectory() as tmp:
+        # Guardar archivos (la referencia puede ser uno o varios documentos)
+        ref_paths = [guardar_upload(f, f"{tmp}/ref") for f in file_ref]
+        query_path = guardar_upload(file_query, f"{tmp}/query")
 
         # Ejecutar pipeline
-        supervisor = RAG(ref_path)
-        docs = supervisor.read_document()
+        supervisor = RAG(ref_paths[0])
+        docs = []
+        for ref_path in ref_paths:
+            supervisor.path = ref_path
+            docs.extend(supervisor.read_document())
         docs = supervisor.clean(docs)
         chunks = supervisor.split(docs, chunk_ss=800, chunk_so=200)
         supervisor.qdrant_record(chunks, collection_name=collection_name)
 
-        # CORRECCIÓN: Comparar con tipo_validacion, no con prompt_seleccionado
-        if tipo_validacion == "Código vs Técnico":
+        # El código SAS se traduce primero a texto, sea cual sea el tipo de validación
+        # (antes solo en "Código vs Técnico": en "Código vs Estadístico" un .sas fallaba)
+        if query_path.lower().endswith(".sas"):
             from Codigo_sas import ProcesarSAS
-            procesador_sas = ProcesarSAS("descargas/source.spm")
+            procesador_sas = ProcesarSAS()
             
             # Crear directorio para el archivo SAS
             sas_dir = f"{tmp}/sas_files"
@@ -136,6 +155,8 @@ async def validar_documentos(file_ref: UploadFile = File(...),
         print(f"🔍 Leyendo documento desde: {query_path}")  # Debug
         query_docs = consulta.read_document()
         query_docs = consulta.clean(query_docs)
+        if not any(d.page_content.strip() for d in query_docs):
+            raise ValueError("El documento de consulta no contiene texto extraíble (¿PDF escaneado?).")
         query_chunks = consulta.split_query(query_docs, 600, 200, sample_ratio=doc_sample_ratio)
         # query_chunks = split_by_consulta_pattern(query_docs)
         results = consulta.process_query_chunks_v2(query_chunks, collection_name=collection_name)
@@ -204,9 +225,8 @@ async def validar_documentos(file_ref: UploadFile = File(...),
 
 @app.get("/colecciones")
 def listar_colecciones():
-    from qdrant_client import QdrantClient
-    client = QdrantClient("localhost", port=6333)  # ajusta si es necesario
-    collections = client.get_collections().collections
+    from X_qderant import get_qdrant_client
+    collections = get_qdrant_client().get_collections().collections
     nombres = [col.name for col in collections]
     return {"colecciones": nombres}
 

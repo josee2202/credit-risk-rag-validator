@@ -1,5 +1,7 @@
 from langchain_core.prompts import PromptTemplate
 
+# En la API, {contexto} son los fragmentos recuperados del documento de REFERENCIA (la norma)
+# y {pregunta} es el fragmento del documento que se VALIDA (el del banco).
 prompt_definitivos = {"evaluar_alineacion_normativa": PromptTemplate(
         input_variables=["contexto", "pregunta"],
         template='''
@@ -9,10 +11,10 @@ prompt_definitivos = {"evaluar_alineacion_normativa": PromptTemplate(
         aplicables (supervisor). Justifica si el contexto proporcionado está alineado con la norma y regulación del texto supervisor.
 
         **Información a analizar (contexto):**
-        {contexto}
+        {pregunta}
 
         **Texto del supervisor (norma):**
-        {pregunta}
+        {contexto}
 
         **Salida:** Justifica de manera clara y concisa si el contexto se alinea con la normativa (supervisor). Responde EXCLUSIVAMENTE al contexto y texto del supervisor proporcionado,
         sin añadir interpretaciones fuera del análisis.
