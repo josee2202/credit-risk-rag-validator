@@ -39,6 +39,15 @@ def test_agrupar_bloques_respeta_el_presupuesto_de_tokens():
     assert all(len(proc.sp.encode(g)) <= presupuesto + 5 for g in grupos)  # margen por saltos de línea
 
 
+def test_agentes_llm_limitan_los_tokens_generados():
+    """Sin límite, llama3.2:1b entró en bucle con un SAS real (38.000 tokens en 2 h, sin respuesta)."""
+    import X_AGENT
+
+    assert X_AGENT.llm_max_tokens > 0
+    for agente in (X_AGENT.agente_dinamico, X_AGENT.codigo, X_AGENT.resumen):
+        assert agente.llm.num_predict == X_AGENT.llm_max_tokens
+
+
 def test_indexa_pdf_y_recupera_con_fuente_pagina_y_similitud(fake_embeddings, coleccion):
     from RAG3 import RAG
 

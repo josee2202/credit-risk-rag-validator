@@ -19,5 +19,7 @@ if os.getenv("EMBED_MODEL"):
     cfg_param['llm']['embed']['name'] = os.getenv("EMBED_MODEL")
 if os.getenv("LLM_MODEL"):
     cfg_param['llm']['text']['name'] = os.getenv("LLM_MODEL")
+if os.getenv("LLM_MAX_TOKENS"):
+    cfg_param['llm']['text']['max_tokens'] = int(os.getenv("LLM_MAX_TOKENS"))
 if os.getenv("QDRANT_LOCATION"):
     cfg_param['qdrant']['location'] = os.getenv("QDRANT_LOCATION")
