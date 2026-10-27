@@ -10,8 +10,10 @@ from langchain_text_splitters import (
 # Tokenizador 
 # ==========================================================================================
 import sentencepiece as spm
+# Tokenizador SentencePiece de Helsinki-NLP/opus-mt-es-en (Apache-2.0), usado para estimar longitudes
+SPM_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "descargas", "source.spm")
 sp = spm.SentencePieceProcessor()
-sp.load("descargas/source.spm") 
+sp.load(SPM_PATH)
 # Para diseñar documentos  
 # ==========================================================================================
 from langchain_core.documents import Document
@@ -24,7 +26,7 @@ from X_FUNCTIONS import SASLoader
 
 
 class ProcesarSAS:
-    def __init__(self, sp_model_path):
+    def __init__(self, sp_model_path=SPM_PATH):
         self.sp = spm.SentencePieceProcessor()
         self.sp.load(sp_model_path)
         self.historial_respuestas = []
