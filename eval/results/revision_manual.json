@@ -1,0 +1,27 @@
+{
+  "_criterio": "Revisión manual de cada respuesta completa (llm_<modelo>.json). Etiqueta = conclusión final de la respuesta: alineado | no_alineado | sin_evidencia | ambiguo (la respuesta se contradice). Criterio estricto: solo cuenta como acierto si coincide con gold_label.",
+  "llama3.2:1b": {
+    "M1": ["alineado", "Concluye 'está alineado con la norma'."],
+    "M2": ["alineado", "Afirma que el contexto 'establece un periodo de al menos cinco años' (falso: son tres)."],
+    "M3": ["alineado", "'Se ajusta correctamente'; no detecta la falta de margen de conservadurismo."],
+    "M4": ["alineado", "'Se ajusta correctamente', con matices confusos."],
+    "M5": ["alineado", "'Se ajusta correctamente'."],
+    "M6": ["alineado", "'Se ajusta correctamente'; no detecta que usa un único escenario."],
+    "M7": ["alineado", "Concluye alineado (cita R5 en lugar de R6)."],
+    "M8": ["alineado", "'Se ajusta correctamente', con sugerencias de mejora."],
+    "M9": ["alineado", "'Se ajusta correctamente' e inventa que el equipo tiene validación independiente."],
+    "M10": ["alineado", "'Se ajusta correctamente' para un párrafo sobre tipografía."]
+  },
+  "llama3.2:3b": {
+    "M1": ["alineado", "'Se ajusta correctamente' citando R1."],
+    "M2": ["no_alineado", "'Se ajusta parcialmente… no cumple con la normativa que establece un mínimo de cinco años' (la heurística lo clasificó como alineado)."],
+    "M3": ["ambiguo", "Empieza con 'se ajusta correctamente' y termina señalando la falta de margen de conservadurismo como posible omisión."],
+    "M4": ["alineado", "'Se ajusta correctamente' citando R4."],
+    "M5": ["alineado", "'Se ajusta' a R5."],
+    "M6": ["alineado", "Afirma que un único escenario 'se alinea' con R8, que exige al menos tres."],
+    "M7": ["alineado", "'Se ajusta' a R6."],
+    "M8": ["alineado", "'Se ajusta correctamente' citando R7."],
+    "M9": ["no_alineado", "'No se alinea directamente… no se menciona ninguna de las normas': reconoce que no hay requisito aplicable, pero lo formula como desalineación."],
+    "M10": ["alineado", "'Se ajusta correctamente' para un párrafo sobre tipografía."]
+  }
+}
